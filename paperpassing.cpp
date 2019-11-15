@@ -7,7 +7,9 @@ PaperPassing::PaperPassing()
 
 string PaperPassing::solve(string s)
 {
-    //test branch1
+
+
+    //test branch2
     vector<int> read_in_num = stringtoVectorInt(s);
     int iterator = 0;       //iterator helps point to the numbers in the vector
     int N = read_in_num[iterator];    //gets the first number of the vector, to know how large the pass array should be
@@ -42,7 +44,7 @@ string PaperPassing::solve(string s)
 
     int max = times[1];
     int maxperson = 1;
-    qDebug() << times[1] << times[2] << times[3];
+    //qDebug() << times[1] << times[2] << times[3];
     for(int i = 1; i <= N; i++)
     {
         if(max < times[i])
