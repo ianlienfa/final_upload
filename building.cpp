@@ -19,6 +19,7 @@ void Building::run()
     data.testdata1 = s;
     string s2 = paperpassing.solve(s);
     data.submit1 = s2;
+    qDebug() << QString::fromStdString(s2) << endl;
     bool correct = judge.submitData(s2);
     data.correct1 = correct;
     data.spendtime1 = judge.getSpendTime();

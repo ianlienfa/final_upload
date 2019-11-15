@@ -17,7 +17,7 @@ string Judge::getData(int question)
 
     if(question == 0)
     {
-        in.open("/Users/fangsuli/Documents/ian_AOOP/project_3/4c.txt"); //若相對位置，要將0.txt與1.exe擺在同個directory!!!
+        in.open("/Users/fangsuli/Documents/ian_AOOP/AOOP_final_0/4c.txt"); //若相對位置，要將0.txt與1.exe擺在同個directory!!!
         while(getline(in,input_data))
         {
             input_data_all_0.push_back(input_data);
@@ -30,6 +30,8 @@ string Judge::getData(int question)
         } while (random%2!=0);
 
         ans = input_data_all_0 [random+1]; //correct answer for this question
+        qDebug() << "ans:" << QString::fromStdString(ans) << endl;
+        string_tidy_up(ans);      //多加一個淸空格跟清垃圾的，此function以inline形式定義在judge的private裡面
         in.close();//Remember to close file!!!否則不能開下一個檔案
         return input_data_all_0[random];
 
