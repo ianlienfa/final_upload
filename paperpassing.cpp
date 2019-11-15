@@ -8,8 +8,9 @@ PaperPassing::PaperPassing()
 string PaperPassing::solve(string s)
 {
     //挖哈哈哈
+    //second test
     vector<int> read_in_num = stringtoVectorInt(s);
-    int iterator = 1;       //iterator helps point to the numbers in the vector
+    int iterator = 0;       //iterator helps point to the numbers in the vector
     int N = read_in_num[iterator];    //gets the first number of the vector, to know how large the pass array should be
     int *pass_p = new int[N+1];    //pass array saves the person the index person will pass the paper to.
                             //ex: 1-> 2, then pass[1] = 2;
