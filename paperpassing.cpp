@@ -15,7 +15,7 @@ string PaperPassing::solve(string s)
     int N = read_in_num[iterator];    //gets the first number of the vector, to know how large the pass array should be
     int *pass_p = new int[N+1];    //pass array saves the person the index person will pass the paper to.
                             //ex: 1-> 2, then pass[1] = 2;
-    
+
     int index = 0; int num = 0;
     for(int i = 0; i < N; i++)
     {

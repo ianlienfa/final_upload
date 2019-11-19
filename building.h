@@ -5,7 +5,14 @@
 #include "judge.h"
 #include "add1.h"
 #include "prime.h"
+#include "closest_path.h"
+#include "problemset.h"
+#include "floor.h"
+#include "longest_path.h"
+#include "minesweeper.h"
 #include "paperpassing.h"
+#include "fib.h"
+
 #include <iostream>
 using namespace std;
 
@@ -15,17 +22,14 @@ class Building
 {
     public:
         Building();
-        void run();
+        void run(int);
         Data getData(){return data;}
     private:
         Judge judge;
         Data data;
-
-        //以下開始為小遊戲
         Add1 add1;
         Prime prime;
-        PaperPassing paperpassing;
-
+        Floor *floor[30];
 };
 
 #endif // BUILDING_H
