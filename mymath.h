@@ -4,6 +4,7 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include <math.h>
 #include "problemset.h"
 #include <string>
 #include <QDebug>
@@ -14,9 +15,12 @@ class MyMath : public ProblemSet
 {
     public:
         MyMath();
-        string solve(string);
+        virtual string solve(string) = 0;
         vector<int>stringtoVectorInt(string);
+        vector<double>stringtoVectordouble(string);
         string vectorIntToString(vector<int>);
+        string vectordoubleToString(vector<double>);
+
 };
 
 #endif // MYMATH_H

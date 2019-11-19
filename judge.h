@@ -14,28 +14,15 @@ class Judge
     public:
         Judge();
         string getData(int question);
+        string geteveryData (string file_name);
         bool submitData(string answer);
         qint64 getSpendTime(){return costtime;}
     private:
-        string ans;
+        string input,ans;
         ifstream in;
         QElapsedTimer timer;
         qint64 costtime;
-        void string_tidy_up(string &s)
-        {
-            string::size_type pos = 0;
-            while(pos != string::npos)
-            {
-                pos = s.find_first_of("\r\n", pos);
-                if(pos != string::npos)
-                    s.erase(pos, 1);
-            }
-            while (s.at(s.length()-1) == ' ')
-            {
-                s.erase(s.length()-1, 1);
-            }
-        }
-
+        void string_tidy_up(string &s); //去除txt每一行尾端的空白鍵
 };
 
 #endif // JUDGE_H

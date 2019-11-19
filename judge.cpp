@@ -4,59 +4,48 @@ Judge::Judge()
 {
 
 }
+void Judge::string_tidy_up(string &s)
+{
+    if (s.at(s.length()-1) == ' ')
+        s.erase(s.length()-1, 1);
+}
 string Judge::getData(int question)
 {
     timer.start();
+    string file_name[8] = {"0.txt","1.txt","2c.txt","3c.txt","4c.txt","longest.txt","shygame.txt","myfibfib.txt"};
 
+    return geteveryData(file_name[question]);
+}
+string Judge::geteveryData(string name)
+{
     srand( time(NULL) );
     string input_data;
-    vector<string> input_data_all_0,input_data_all_1;
+    vector<string> input_data_all;
     int random = 0;
 
+    string file = "C:\\Users\\USER\\Desktop\\AOOPNCTU\\Lab\\Final Project\\Lab7\\";
+    string file_name  = file + name;
+    in.open(file_name);
 
-
-    if(question == 0)
+    while(getline(in,input_data)) //Read Every Line From txt file
     {
-        in.open("/Users/fangsuli/Documents/ian_AOOP/AOOP_final_0/4c.txt"); //若相對位置，要將0.txt與1.exe擺在同個directory!!!
-        while(getline(in,input_data))
-        {
-            input_data_all_0.push_back(input_data);
-        }
-
-        do
-        {
-            random = rand()%input_data_all_0.size();
-
-        } while (random%2!=0);
-
-        ans = input_data_all_0 [random+1]; //correct answer for this question
-        qDebug() << "ans:" << QString::fromStdString(ans) << endl;
-        string_tidy_up(ans);      //多加一個淸空格跟清垃圾的，此function以inline形式定義在judge的private裡面
-        in.close();//Remember to close file!!!否則不能開下一個檔案
-        return input_data_all_0[random];
-
+        input_data_all.push_back(input_data);
     }
-    if(question == 1)
+
+    do//Take random line from txt file
     {
-        in.open("/Users/fangsuli/Documents/ian_AOOP/project_3/1.txt"); //txt檔每一個line最後不能有space!!!，否則string to int會出錯
-        //if(!in){qDebug() << "dddd";}
-        while(getline(in,input_data))
-        {
-            input_data_all_1.push_back(input_data);
-           // qDebug() << QString::fromStdString(input_data);
-        }
+        random = rand()%input_data_all.size();
+    } while (random%2!=0);
 
-        do
-        {
-            random = rand()%input_data_all_1.size();
-        } while (random%2!=0);
-        //qDebug() << random;
-        ans = input_data_all_1 [random+1];
-        //qDebug() << input_data_all_1[random];
-        //qDebug() << QString::fromStdString(input_data_all_1[random]);
-        return input_data_all_1[random];
+    ans = input_data_all [random+1];
+    string_tidy_up(ans);
 
-    }
+
+    input = input_data_all [random];
+    string_tidy_up(input);//txt檔每一個line最後不能有space!!!，否則string to int會出錯
+    //qDebug() << "ans:" << QString::fromStdString(input) << endl;
+    in.close();
+    return input;
 }
 bool Judge::submitData(string answer)
 {
