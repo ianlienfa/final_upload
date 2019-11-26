@@ -11,6 +11,7 @@ Building::Building()
     floor[5] = new Floor(new longest_path());
     //floor[6] = new Floor(new longest_path());
     floor[7] = new Floor(new fib());
+    floor[8] = new Floor(new LargestRoot());
 }
 void Building::run(int index)
 {

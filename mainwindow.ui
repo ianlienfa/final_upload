@@ -19,7 +19,7 @@
      <rect>
       <x>30</x>
       <y>10</y>
-      <width>51</width>
+      <width>131</width>
       <height>16</height>
      </rect>
     </property>
@@ -32,7 +32,7 @@
      <rect>
       <x>30</x>
       <y>40</y>
-      <width>51</width>
+      <width>121</width>
       <height>16</height>
      </rect>
     </property>
@@ -45,7 +45,7 @@
      <rect>
       <x>30</x>
       <y>70</y>
-      <width>51</width>
+      <width>111</width>
       <height>16</height>
      </rect>
     </property>
@@ -58,7 +58,7 @@
      <rect>
       <x>30</x>
       <y>100</y>
-      <width>51</width>
+      <width>151</width>
       <height>16</height>
      </rect>
     </property>
@@ -69,10 +69,10 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>130</y>
-      <width>80</width>
-      <height>15</height>
+      <x>380</x>
+      <y>140</y>
+      <width>351</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -82,7 +82,7 @@
    <widget class="QLineEdit" name="Testdata1">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>190</x>
       <y>10</y>
       <width>511</width>
       <height>20</height>
@@ -92,7 +92,7 @@
    <widget class="QLineEdit" name="Submitdata1">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>190</x>
       <y>40</y>
       <width>511</width>
       <height>20</height>
@@ -102,7 +102,7 @@
    <widget class="QLineEdit" name="SpendTime1">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>190</x>
       <y>70</y>
       <width>151</width>
       <height>20</height>
@@ -112,7 +112,7 @@
    <widget class="QLineEdit" name="Correctornot1">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>190</x>
       <y>100</y>
       <width>151</width>
       <height>20</height>
@@ -122,9 +122,9 @@
    <widget class="QComboBox" name="comboBox">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>181</y>
-      <width>55</width>
+      <x>30</x>
+      <y>150</y>
+      <width>341</width>
       <height>21</height>
      </rect>
     </property>
@@ -251,7 +251,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>17</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

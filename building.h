@@ -12,6 +12,7 @@
 #include "minesweeper.h"
 #include "paperpassing.h"
 #include "fib.h"
+#include "largestroot.h"
 
 #include <iostream>
 using namespace std;

@@ -6,13 +6,25 @@ Judge::Judge()
 }
 void Judge::string_tidy_up(string &s)
 {
-    if (s.at(s.length()-1) == ' ')
+//    if (s.at(s.length()-1) == ' ' ||s.at(s.length()-1) == '\r' || s.at(s.length()-1) == '\n')
+//        s.erase(s.length()-1, 1);
+    string::size_type pos = 0;
+    while(pos != string::npos)
+    {
+        pos = s.find_first_of("\r\n", pos);
+        if(pos != string::npos)
+            s.erase(pos, 1);
+    }
+    while (s.at(s.length()-1) == ' ')
+    {
         s.erase(s.length()-1, 1);
+    }
+
 }
 string Judge::getData(int question)
 {
     timer.start();
-    string file_name[8] = {"0.txt","1.txt","2c.txt","3c.txt","4c.txt","longest.txt","shygame.txt","myfibfib.txt"};
+    string file_name[9] = {"0.txt","1.txt","2c.txt","3c.txt","4c.txt","longest.txt","shygame.txt","myfibfib.txt", "maxroot.txt"};
 
     return geteveryData(file_name[question]);
 }
@@ -23,7 +35,7 @@ string Judge::geteveryData(string name)
     vector<string> input_data_all;
     int random = 0;
 
-    string file = "C:\\Users\\USER\\Desktop\\AOOPNCTU\\Lab\\Final Project\\Lab7\\";
+    string file = "/Users/fangsuli/Documents/ian_AOOP/AOOP_final_0/";
     string file_name  = file + name;
     in.open(file_name);
 
@@ -38,10 +50,14 @@ string Judge::geteveryData(string name)
     } while (random%2!=0);
 
     ans = input_data_all [random+1];
+    //ans = input_data_all [1];
+    //qDebug() << QString::fromStdString(ans);
     string_tidy_up(ans);
 
 
     input = input_data_all [random];
+    //input = input_data_all [1];
+
     string_tidy_up(input);//txt檔每一個line最後不能有space!!!，否則string to int會出錯
     //qDebug() << "ans:" << QString::fromStdString(input) << endl;
     in.close();
