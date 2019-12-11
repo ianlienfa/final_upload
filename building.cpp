@@ -8,20 +8,20 @@
 #include <QSqlError>
 Building::Building()
 {
-    floor[0] = new Floor(new Add1());
-    floor[1] = new Floor(new Prime());
-    floor[2] = new Floor(new closest_path());
-    floor[3] = new Floor(new Minesweeper());
-    floor[4] = new Floor(new PaperPassing());
-    floor[5] = new Floor(new longest_path());
-    //floor[6] = new Floor(new longest_path());
+    //floor[0] = ......
+    floor[1] = new Floor(new Add1());
+    floor[2] = new Floor(new Prime());
+    floor[3] = new Floor(new closest_path());
+    floor[4] = new Floor(new Minesweeper());
+    floor[5] = new Floor(new PaperPassing());
+    floor[6] = new Floor(new longest_path());
     floor[7] = new Floor(new fib());
     floor[8] = new Floor(new LargestRoot());
-    floor[9] = new Floor(new factorial());
-    floor[10] = new Floor(new TreeWalk());
-    floor[11] = new Floor(new Escape());
+    floor[9] = new Floor(new TreeWalk());
+    floor[10] = new Floor(new Escape());
+    //floor[11] = new Floor(new TreeWalk());
     //floor[11] = new Floor(newtree());
-    //connect(timer,SIGNAL(timeout()),this, SLOT(update()));
+    connect(&timer,SIGNAL(timeout()),this, SLOT(update()));
 
     p1.destination.clear();
     p1.peoplenum.clear();
@@ -98,14 +98,21 @@ void Building::run(int index)
 void Building::start_simulation()
 {
     timer.start(1000);
+    timer.setSingleShot(true);
     //index = index+ 1;
 }
 void Building::update()
 {
-    if(schedule.getNowFloor()!=0)
-        run(schedule.getNowFloor());
+    qDebug() << "RRRR" ;
+    data.nowfloor = schedule.getNowFloor(); //注意!!!!!不能重複寫getNowFloor，會一直+1!!!
+    if(data.nowfloor!=0){
+        run(data.nowfloor);
+        timer.start(1000);
+    }
     else{
         timer.stop();
     }
+    qDebug() << "DDDD" ;
     emit this->updateGUI();
+    qDebug() << "CCCC" ;
 }

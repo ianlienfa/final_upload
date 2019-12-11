@@ -1,5 +1,5 @@
 #include "scheduler.h"
-
+#include <QDebug>
 Scheduler::Scheduler()
 {
     nowFloor.push_back(1);
@@ -19,5 +19,6 @@ int Scheduler::getNowFloor()
 {
     int answer = nowFloor[index];
     index = index + 1;
+    qDebug() <<"FLOOR"<< answer;
     return answer;
 }

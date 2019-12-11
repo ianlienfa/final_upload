@@ -76,7 +76,7 @@ void MainWindow::on_pushButton_3_clicked() //Start Simulation Button
 void MainWindow::slot_update_data()
 {
     windata = building.getData();
-    if(building.schedule.getNowFloor()!=0){
+    if(windata.nowfloor!=0){
         ui -> Testdata1 -> setText(QString::fromStdString(windata.testdata1));
         ui -> Submitdata1 -> setText(QString::fromStdString(windata.submit1));
         ui -> SpendTime1 -> setText(QString::number(windata.spendtime1));

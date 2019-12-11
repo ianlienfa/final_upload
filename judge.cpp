@@ -21,7 +21,7 @@ void Judge::string_tidy_up(string &s)
 string Judge::getData(int question)
 {
     timer.start();
-    string file_name[12] = {"0.txt","1.txt","2c.txt","3c.txt","4c.txt","longest.txt","shygame.txt","myfibfib.txt","maxroot.txt","8.txt","treewalk.txt","4.txt"};
+    string file_name[11] = {"0.txt","0.txt","1.txt","2c.txt","3c.txt","4c.txt","longest.txt","myfibfib.txt","maxroot.txt","treewalk.txt","4.txt"};
 
     return geteveryData(file_name[question]);
 }
