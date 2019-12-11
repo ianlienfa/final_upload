@@ -1,6 +1,7 @@
 #ifndef FLOOR_H
 #define FLOOR_H
 #include "problemset.h"
+#include "people.h"
 
 class Floor
 {
@@ -9,6 +10,7 @@ class Floor
         Floor(ProblemSet *problem){this->p=problem;}
         void setProblem(ProblemSet *problem){this->p=problem;}
         ProblemSet *p;
+
     private:
         int fn;
 };

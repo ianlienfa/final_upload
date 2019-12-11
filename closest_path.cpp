@@ -16,7 +16,7 @@ string closest_path::solve(string s)
                 double length = sqrt((vec[i*3]-vec[j*3])*(vec[i*3]-vec[j*3]) + (vec[i*3+1]-vec[j*3+1])*(vec[i*3+1]-vec[j*3+1]) + (vec[i*3+2]-vec[j*3+2])*(vec[i*3+2]-vec[j*3+2]));
                 result.push_back(length);
                 //qDebug() << vec[i*3]<< vec[i*3+1] << vec[i*3+2] << vec[j*3] << vec[j*3+1] << vec[j*3+2];
-                qDebug() << (vec[i*3]-vec[j*3])*(vec[i*3]-vec[j*3]) << (vec[i*3+1]-vec[j*3+1])*(vec[i*3+1]-vec[j*3+1]) << (vec[i*3+2]-vec[j*3+2])*(vec[i*3+2]-vec[j*3+2]);
+                //qDebug() << (vec[i*3]-vec[j*3])*(vec[i*3]-vec[j*3]) << (vec[i*3+1]-vec[j*3+1])*(vec[i*3+1]-vec[j*3+1]) << (vec[i*3+2]-vec[j*3+2])*(vec[i*3+2]-vec[j*3+2]);
         }
     }
 

@@ -17,11 +17,13 @@ class Judge
         string geteveryData (string file_name);
         bool submitData(string answer);
         qint64 getSpendTime(){return costtime;}
+        qint64 getScore(){return score;}
     private:
         string input,ans;
         ifstream in;
         QElapsedTimer timer;
         qint64 costtime;
+        int score = 0;
         void string_tidy_up(string &s); //去除txt每一行尾端的空白鍵
 };
 
