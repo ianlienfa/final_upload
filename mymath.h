@@ -20,6 +20,7 @@ class MyMath : public ProblemSet
         vector<double>stringtoVectordouble(string);
         string vectorIntToString(vector<int>);
         string vectordoubleToString(vector<double>);
+        vector<string> stringToVectorString(string);
 
 };
 
