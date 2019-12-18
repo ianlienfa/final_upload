@@ -58,12 +58,41 @@ void Scheduler::setSchedule(People p, Data data)    //there's number of people o
 }
 
 
-int Scheduler::getNowFloor()
+int Scheduler::getNowFloor(int index)
 {
-    int answer = nowFloor[index];
-    index = index + 1;
-    qDebug() <<"FLOOR"<< answer;
-    return answer;
+//    index = index + 1;
+//    qDebug() <<"FLOOR"<< answer;
+
+    if(index >= nowFloor.size())
+    {
+        qDebug() << "out of index.";
+        return NULL;
+    }
+    return nowFloor[index];
+
+}
+
+int Scheduler::getDoorIO(int index)
+{
+
+    if(index >= nowFloor.size())
+    {
+        qDebug() << "out of index.";
+        return NULL;
+    }
+    return IO[index];
+
+}
+
+int Scheduler::getElevatorPeople(int index)
+{
+
+    if(index >= nowFloor.size())
+    {
+        qDebug() << "out of index.";
+        return NULL;
+    }
+    return number[index];
 }
 
 
