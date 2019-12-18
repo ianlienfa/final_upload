@@ -8,13 +8,13 @@
 #include <QSqlError>
 Building::Building()
 {
-    floor[0] = new Floor(new Add1());
-    floor[1] = new Floor(new Prime());
-    floor[2] = new Floor(new closest_path());
-    floor[3] = new Floor(new Minesweeper());
-    floor[4] = new Floor(new PaperPassing());
-    floor[5] = new Floor(new longest_path());
-    //floor[6] = new Floor(new longest_path());
+    //floor[0] = ......
+    floor[1] = new Floor(new Add1());
+    floor[2] = new Floor(new Prime());
+    floor[3] = new Floor(new closest_path());
+    floor[4] = new Floor(new Minesweeper());
+    floor[5] = new Floor(new PaperPassing());
+    floor[6] = new Floor(new longest_path());
     floor[7] = new Floor(new fib());
     floor[8] = new Floor(new LargestRoot());
     floor[9] = new Floor(new factorial());
@@ -23,7 +23,7 @@ Building::Building()
     floor[12] = new Floor(new FindPeriodString());
     floor[13] = new Floor(new LargeFactorial());
     //floor[11] = new Floor(newtree());
-    //connect(timer,SIGNAL(timeout()),this, SLOT(update()));
+    connect(&timer,SIGNAL(timeout()),this, SLOT(update()));
 
     p1.destination.clear();
     p1.peoplenum.clear();
@@ -118,4 +118,5 @@ void Building::update()
     }
 
     emit this->updateGUI();
+    qDebug() << "CCCC" ;
 }
