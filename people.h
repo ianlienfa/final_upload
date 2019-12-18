@@ -8,8 +8,8 @@ class People
 {
 public:
     People();
-    vector<QString> peoplenum;
-    vector<QString> destination;
+    vector<int> peoplenum;
+    vector<int> destination;
 };
 
 #endif // PEOPLE_H

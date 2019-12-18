@@ -21,7 +21,7 @@ void Judge::string_tidy_up(string &s)
 string Judge::getData(int question)
 {
     timer.start();
-    string file_name[12] = {"0.txt","1.txt","2c.txt","3c.txt","4c.txt","longest.txt","shygame.txt","myfibfib.txt","maxroot.txt","8.txt","treewalk.txt","4.txt"};
+    string file_name[16] = {"0.txt","1.txt","2c.txt","3c.txt","4c.txt","longest.txt","shygame.txt","myfibfib.txt","maxroot.txt","8.txt","treewalk.txt","4.txt", "2_fd.txt", "bigfact.txt"};
 
     return geteveryData(file_name[question]);
 }
@@ -32,7 +32,7 @@ string Judge::geteveryData(string name)
     vector<string> input_data_all;
     int random = 0;
 
-    string file = "C:\\Users\\USER\\Desktop\\AOOPNCTU\\Lab\\Final Project\\Lab9\\";
+    string file = "C:\\Users\\ianli\\Documents\\AOOP_final\\";
     string file_name  = file + name;
     in.open(file_name);
 

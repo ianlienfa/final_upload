@@ -20,6 +20,8 @@ Building::Building()
     floor[9] = new Floor(new factorial());
     floor[10] = new Floor(new TreeWalk());
     floor[11] = new Floor(new Escape());
+    floor[12] = new Floor(new FindPeriodString());
+    floor[13] = new Floor(new LargeFactorial());
     //floor[11] = new Floor(newtree());
     //connect(timer,SIGNAL(timeout()),this, SLOT(update()));
 
@@ -30,7 +32,7 @@ Building::Building()
     database.setHostName("localhost");
     //database.setDatabaseName("Course6");
     database.setUserName("root");
-    database.setPassword("et1214");
+    database.setPassword("12345678");
     database.setPort(3306);
     bool ok = database.open();
         if(ok){
@@ -75,9 +77,12 @@ Building::Building()
             p1.peoplenum = QVariant(query.value(3)).toString();
         }
         */
-        p1.destination.push_back((query.value(2)).toString());
-        p1.peoplenum.push_back((query.value(3)).toString());
+        p1.destination.push_back((query.value(2)).toInt());
+        p1.peoplenum.push_back((query.value(3)).toInt());
     }
+    qDebug() << p1.peoplenum;
+    qDebug() << p1.destination;
+    //schedule.setSchedule(p1);
 
 }
 void Building::run(int index)
@@ -97,15 +102,20 @@ void Building::run(int index)
 }
 void Building::start_simulation()
 {
-    timer.start(1000);
+    timer.start(100);
+    timer.setSingleShot(true);
     //index = index+ 1;
 }
 void Building::update()
 {
-    if(schedule.getNowFloor()!=0)
-        run(schedule.getNowFloor());
+    data.nowfloor = schedule.getNowFloor(); //注意!!!!!不能重複寫getNowFloor，會一直+1!!!
+    if(data.nowfloor!=0){
+        run(data.nowfloor);
+        timer.start(1000);
+    }
     else{
         timer.stop();
     }
+
     emit this->updateGUI();
 }

@@ -4,6 +4,7 @@
 #include <QtGlobal>
 #include <fstream>
 #include <QElapsedTimer>
+#include <vector>
 using namespace std;
 
 class Data
@@ -15,6 +16,7 @@ class Data
         string submit1,submit2;
         bool correct1,correct2;
         int nowfloor,score;
+        vector<int> distance, elevatorpeople;
 };
 
 #endif // DATA_H

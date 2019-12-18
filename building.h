@@ -17,6 +17,8 @@
 #include "treewalk.h"
 #include "escape.h"
 #include "scheduler.h"
+#include "findperiodstring.h"
+#include "largefactorial.h"
 
 #include <QTimer>
 #include <iostream>
