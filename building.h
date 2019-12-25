@@ -19,6 +19,9 @@
 #include "scheduler.h"
 #include "findperiodstring.h"
 #include "largefactorial.h"
+#include "sumoflarge.h"
+#include "easycity2.h"
+#include "shygame.h"
 
 #include <QTimer>
 #include <iostream>

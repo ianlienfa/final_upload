@@ -21,8 +21,8 @@ void Judge::string_tidy_up(string &s)
 string Judge::getData(int question)
 {
     timer.start();
-    string file_name[16] = {"0.txt","1.txt","2c.txt","3c.txt","4c.txt","longest.txt","shygame.txt","myfibfib.txt","maxroot.txt","8.txt","treewalk.txt","4.txt", "2_fd.txt", "bigfact.txt"};
-    
+    string file_name[27] = {"0.txt","1.txt","2c.txt","3c.txt","4c.txt","longest.txt","shygame.txt","myfibfib.txt","maxroot.txt","8.txt","treewalk.txt","4.txt", "2_fd.txt", "bigfact.txt", "bighex.txt", "myDatabase1_EasyCity2.txt", "shygame.txt"};
+
     return geteveryData(file_name[question]);
 }
 string Judge::geteveryData(string name)
@@ -35,7 +35,7 @@ string Judge::geteveryData(string name)
     string file = "C:\\Users\\ianli\\Documents\\AOOP_final\\";
     string file_name  = file + name;
     in.open(file_name);
-
+    //qDebug() << "file open or not:"<<in.is_open();
     while(getline(in,input_data)) //Read Every Line From txt file
     {
         input_data_all.push_back(input_data);

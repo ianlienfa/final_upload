@@ -11,11 +11,7 @@ string easycity1::solve(string s)
     database.setHostName("localhost");
     //database.setDatabaseName("Course6");
     database.setUserName("root");
-<<<<<<< HEAD
     database.setPassword("12345678");
-=======
-    database.setPassword("et1214");
->>>>>>> branch1
     database.setPort(3306);
     bool ok = database.open();
         if(ok){

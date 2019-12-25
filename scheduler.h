@@ -17,7 +17,9 @@ class Scheduler
     public:
         Scheduler(){}
         void setSchedule(People p, Data data);
-        int getNowFloor();
+        int getNowFloor(int);
+        int getDoorIO(int);
+        int getElevatorPeople(int);
         void toFile(vector<int> nowFloor, vector<bool> IO, vector<int> number);
 
     private:
