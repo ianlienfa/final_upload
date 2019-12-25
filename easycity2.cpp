@@ -90,6 +90,7 @@ string EasyCity2::solve(string s)
     s_out.push_back(query.value(0).toString().toStdString());
     //qDebug()<<"sn:"<<query.value(1).toString()<<"nc:"<<query.value(0).toString();
     }
+
     query.exec("delete from citytable where ("+cheGenerate(che)+ " or (" +chsGenerate(chs)+")) or "+"(lat between " + QString::number(la) +" and " + QString::number(ha) +" and lon between " +QString::number(lo) + " and "+QString::number(ho) +")");
     //qDebug() << "delete from citytable where ("+cheGenerate(che)+ " or (" +chsGenerate(chs)+")) or "+"(lat between " + QString::number(la) +" and " + QString::number(ha) +" and lon between " +QString::number(lo) + " and "+QString::number(ho) +")";
 

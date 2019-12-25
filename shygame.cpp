@@ -5,22 +5,51 @@ ShyGame::ShyGame()
 
 }
 
-void ShyGame::count(int &pos, int *people, int m, int n)
-{
-    while(m != 0)
-    {
-        pos = (pos+1) % n;
-        if(people[pos-1] != 0)
-        {
-            m--;
-        }
-    }
-    people[pos-1] = 0;
-}
+//void ShyGame::count(int &pos, int *people, int m, int n)
+//{
+//    while(m != 0)
+//    {
+//        pos = (pos+1) % n;
+//        if(people[pos-1] != 0)
+//        {
+//            m--;
+//        }
+//    }
+//    people[pos-1] = 0;
+//}
+
+//void moveToAndDelete(int &iter, int* people, int m, int n)
+//{
+
+//    //go to the right place
+//    while(people[iter] == 0)
+//        iter = (iter + 1)%m;
+
+//    //start at the right place
+//    int count = 0;
+//    if(people[iter] != 0)
+//    {
+//        count++;
+//    }
+//    while(count != n)
+//    {
+//        iter = (iter + 1)%m;
+//        if(people[iter] != 0)
+//        {
+//            count++;
+//        }
+//    }
+////    qDebug() << "count:" << count;
+////    qDebug() << "iter:" << iter;
+//    people[iter] = 0;
+//}
 
 void moveToAndDelete(int &iter, int* people, int m, int n)
 {
+    for(int i = 0; i < m; i++)
+    {
 
+    }
     //go to the right place
     while(people[iter] == 0)
         iter = (iter + 1)%m;
@@ -43,6 +72,7 @@ void moveToAndDelete(int &iter, int* people, int m, int n)
 //    qDebug() << "iter:" << iter;
     people[iter] = 0;
 }
+
 
 string ShyGame::solve(string s)
 {
