@@ -21,8 +21,6 @@ bool  PrimeDistance::prime(int in)
 
 string PrimeDistance::solve(string s)
 {
-    qDebug()<<"primedistance";
-
    vector<int> in  = stringtoVectorInt(s);
    string ans;
    for(int i = 0; i < in.size(); i++)

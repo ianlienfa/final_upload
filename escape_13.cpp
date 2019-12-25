@@ -41,8 +41,6 @@ vector<char> Escape::stringtoVectorChar(string s)
 }
 string Escape::solve(string s)
 {
-    qDebug()<<"escape_13";
-
     int pos;
 
 

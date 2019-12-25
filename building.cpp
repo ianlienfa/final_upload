@@ -115,8 +115,7 @@ void Building::run(int index)
     qDebug() << index << schedule.getDoorIO(schedule.index) << schedule.getElevatorPeople(schedule.index);
     //取測資
     string s = judge.getData(index,schedule.getDoorIO(schedule.index),times);
-
-    qDebug() << "input string:"<< QString::fromStdString(s);
+    //qDebug() << times;
     data.testdata1 = s;
     qDebug() << QString::fromStdString(s);
     string s2;
@@ -127,7 +126,7 @@ void Building::run(int index)
         if(s=="GIVEUP")
             s2 = "";
         else{
-            qDebug() << "floor:" << index-1;
+            qDebug() << "GGDGFSDG";
             s2 = floor[index-1] -> p -> solve(s);
             qDebug() << QString::fromStdString(s2);
         }

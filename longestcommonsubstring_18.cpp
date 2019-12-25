@@ -7,8 +7,6 @@ LongestSubstring::LongestSubstring()
 
 string LongestSubstring::solve(string s)
 {
-    qDebug()<<"LongestcommonSubstring";
-
     string ans;
     std::size_t find = 0, front = 0;
 

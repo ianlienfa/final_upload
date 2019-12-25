@@ -7,8 +7,6 @@ ShyGame::ShyGame()
 
 void ShyGame::count(int &pos, int *people, int m, int n)
 {
-    qDebug()<<"shygame";
-
     while(m != 0)
     {
         pos = (pos+1) % n;

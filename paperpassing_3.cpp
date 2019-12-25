@@ -7,7 +7,6 @@ PaperPassing::PaperPassing()
 
 string PaperPassing::solve(string s)
 {
-    qDebug()<<"paperpass";
 
 
     //test branch2

@@ -7,8 +7,6 @@ SumOfLarge::SumOfLarge()
 
 string SumOfLarge::solve(string s)
 {
-    qDebug()<<"sumoflarge";
-
     string ans = "0";
     vector<string> svc = stringToVectorString(s);
     for(int i = 0; i < svc.size(); i++)

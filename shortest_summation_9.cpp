@@ -6,8 +6,6 @@ Shortest_Summation_9::Shortest_Summation_9()
 }
 string Shortest_Summation_9::solve(string s_in)
 {
-    qDebug()<<"shortest_summation";
-
     vector<int> vec = stringtoVectorInt(s_in);
 
     ios::sync_with_stdio(false);

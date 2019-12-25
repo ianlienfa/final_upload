@@ -6,8 +6,6 @@ Gaussian::Gaussian()
 }
 string Gaussian::solve(string s_in)
 {
-    qDebug()<<"getsolution_19";
-
     vector<double> vec = stringtoVectordouble(s_in);
     int N  = vec[0];
     int index = 1;

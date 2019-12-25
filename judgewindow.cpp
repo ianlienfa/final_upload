@@ -28,7 +28,7 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
     database = QSqlDatabase::addDatabase("QMYSQL");
     database.setHostName("localhost");
     database.setUserName("root");
-    database.setPassword("12345678");
+    database.setPassword("et1214");
     database.setPort(3306);
     bool ok = database.open();
         if(ok){
@@ -71,7 +71,6 @@ string JudgeWindow::getData(int floor,int b,int& datatimes)
     for(int i=0;i<27;i++)
         showbox[i][0].setDisabled(true);
 
-
     //Get all the testdata from the selected floor
     QSqlQuery query;
     query.exec(QString::fromStdString("select * FROM testdata"));
@@ -82,13 +81,22 @@ string JudgeWindow::getData(int floor,int b,int& datatimes)
 
     string floor_string;
     if (floor<10) //ex.07-
-       floor_string = "0" + to_string(floor) + "-" + "0000" + to_string(random);
+     {
+       if(random<10)
+           floor_string = "0" + to_string(floor) + "-" + "0000" + to_string(random);
+       else
+           floor_string = "0" + to_string(floor) + "-" + "000" + to_string(random);
+     }
     else          //ex.21-
-       floor_string = to_string(floor) + "-" + "0000" + to_string(random);
+    {
+       if(random<10)
+           floor_string = to_string(floor) + "-" + "0000" + to_string(random);
+       else
+           floor_string = to_string(floor) + "-" + "0000" + to_string(random);
+    }
 
-    string real_string = "SELECT * from testdata WHERE id = " + floor_string ;
+    string real_string = "SELECT * from testdata WHERE id LIKE '%" + floor_string + "%'";
     QString q_str = QString::fromStdString(real_string);
-    qDebug() << "sql query:"<< q_str;
     query.exec(q_str);
 
     while(query.next())
@@ -97,7 +105,7 @@ string JudgeWindow::getData(int floor,int b,int& datatimes)
         ans   = (query.value(3).toString()).toStdString();
     }
     input = ques;
-    qDebug() << "string in getData:" <<QString::fromStdString(input);
+    //qDebug() << QString::fromStdString(ques);
     answer = ans;
 
     if(b==1)
@@ -127,24 +135,30 @@ string JudgeWindow::getData(int floor,int b,int& datatimes)
     return input;
 }
 bool JudgeWindow::submitData(string answer_cal,int floor)
-{
-    score[floor-1] = score[floor-1] + 10000000000 + pow(2,test_data[floor-1]);
-
+{ 
+    qDebug() << score[floor-1];
     if (answer == answer_cal){
+        score[floor-1] = score[floor-1] + 10000000000 + pow(2,test_data[floor-1]-1);
         if(floor<22){
             costtime = timer.nsecsElapsed();
-            total_cossttime[floor-1] = costtime/10;
+            costtime = costtime/10; //costtime 平均(因為一筆測資跑了十次)
+            total_cossttime[floor-1] =  total_cossttime[floor-1] + costtime;
+            for(int i=0;i<27;i++){
+                showline[i][2].setText(QString::number((total_cossttime[i])));
+                showline[i][3].setText(QString::number((score[i])));
+            }
             return 1;
         }
         else{
             costtime = timer.nsecsElapsed();
             total_cossttime[floor-1] = costtime;
+            for(int i=0;i<27;i++){
+                showline[i][2].setText(QString::number((total_cossttime[i])));
+                showline[i][3].setText(QString::number((score[i])));
+            }
             return 1;
         }
-        for(int i=0;i<27;i++){
-            showline[i][2].setText(QString::number((total_cossttime[i])));
-            showline[i][3].setText(QString::number((score[i])));
-        }
+
     }
     else
         return 0;

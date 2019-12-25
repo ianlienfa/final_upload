@@ -6,8 +6,6 @@ Shortest_Longest_1::Shortest_Longest_1()
 }
 string Shortest_Longest_1::solve(string s)
 {
-    qDebug()<<"shortest_longest";
-
     vector<double> vec = stringtoVectordouble(s);
     qDebug() << "WINN";
     vector<double> result,max_vec;
@@ -25,7 +23,5 @@ string Shortest_Longest_1::solve(string s)
 
     stringstream ss;
     ss << fixed<<setprecision(2) << *smallest << " " << fixed<<setprecision(2) << *biggest;
-    qDebug()<<"end";
-
     return ss.str();
 }

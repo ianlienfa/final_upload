@@ -24,8 +24,6 @@ vector<int> Minesweeper::stringtoVectorInt(string s,int &position)
 }
 string Minesweeper::solve(string s)
 {
-    qDebug()<<"minesweeper";
-
     int pos;//為了得到真正的地圖開始的位置
     vector<int> vec_input = stringtoVectorInt(s,pos);//讀進來的地圖長寬，用vec存
     int** land;     //讀進來的時候把地圖內容換成int方式表示

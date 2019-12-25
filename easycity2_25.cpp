@@ -37,7 +37,6 @@ QString EasyCity2::chsGenerate(string s)
 
 string EasyCity2::solve(string s)
 {
-    qDebug()<<"easycity2";
 
     QSqlDatabase database;
     database = QSqlDatabase::addDatabase("QMYSQL");

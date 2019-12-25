@@ -6,8 +6,6 @@ factorial::factorial()
 }
 string factorial::solve(string s)
 {
-    qDebug()<<"factorial";
-
     vector<int> vec = stringtoVectorInt(s);
 
 
