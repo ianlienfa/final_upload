@@ -3,10 +3,10 @@
 #include <mydatabase.h>
 
 
-class easycity1 : public MyDatabase
+class Easycity1 : public MyDatabase
 {
 public:
-    easycity1();
+    Easycity1();
     virtual string solve(string s);
 };
 
