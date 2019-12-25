@@ -8,35 +8,45 @@
 #include <QSqlError>
 Building::Building()
 {
-    floor[0] = new Floor(new Add1());
-    floor[1] = new Floor(new Prime());
-    floor[2] = new Floor(new closest_path());
-    floor[3] = new Floor(new Minesweeper());
-    floor[4] = new Floor(new PaperPassing());
-    floor[5] = new Floor(new longest_path());
-    //floor[6] = new Floor(new longest_path());
-    floor[7] = new Floor(new fib());
-    floor[8] = new Floor(new LargestRoot());
-    floor[9] = new Floor(new factorial());
-    floor[10] = new Floor(new TreeWalk());
-    floor[11] = new Floor(new Escape());
-    floor[12] = new Floor(new FindPeriodString());
-    floor[13] = new Floor(new LargeFactorial());
-    floor[14] = new Floor(new SumOfLarge());
-    floor[15] = new Floor(new EasyCity2());
-    floor[16] = new Floor(new ShyGame());
 
+    floor[0] = new Floor(new Shortest_Longest_1);
+    floor[1] = new Floor(new Minesweeper());
+    floor[2] = new Floor(new PaperPassing());
+    floor[3] = new Floor(new ShyGame());
+    floor[4] = new Floor(new fib);
+    floor[5] = new Floor(new LargestRoot());
+    floor[6] = new Floor(new TreeWalk());
+    floor[7] = new Floor(new factorial());
+    floor[8] = new Floor(new Shortest_Summation_9);
+    floor[9] = new Floor(new Add1());
+    floor[10] = new Floor(new PrimeDistance());
+    floor[11] = new Floor(new MarioCoin());
+    floor[12] = new Floor(new Escape());
+    floor[13] = new Floor(new Sub_14());
+    floor[14] = new Floor(new FindPeriodString());
+    floor[15] = new Floor(new LargeFactorial());
+    floor[16] = new Floor(new SumOfLarge());
+    floor[17] = new Floor(new LongestSubstring());
+    floor[18] = new Floor(new Gaussian());
+    floor[19] = new Floor(new LongestPalindrome());
+    floor[20] = new Floor(new Maze());
+    //floor[21] = new Floor(new TreeWalk());
+    //floor[15] = new Floor(new Add1());
+    floor[24] = new Floor(new EasyCity2());
+    //floor[11] = new Floor(new TreeWalk());
     //floor[11] = new Floor(newtree());
-    //connect(timer,SIGNAL(timeout()),this, SLOT(update()));
+    connect(&timer,SIGNAL(timeout()),this, SLOT(update()));
 
-    p1.destination.clear();
-    p1.peoplenum.clear();
+    judge.show();
+    judge.setSeed(0);
+    int random = judge.getConditionNum(); //get People data according variable n
+
+    /*
     QSqlDatabase database;
     database = QSqlDatabase::addDatabase("QMYSQL");
     database.setHostName("localhost");
-    //database.setDatabaseName("Course6");
     database.setUserName("root");
-    database.setPassword("12345678");
+    database.setPassword("et1214");
     database.setPort(3306);
     bool ok = database.open();
         if(ok){
@@ -46,80 +56,137 @@ Building::Building()
         else{
             qDebug() << "Error88787: Cannot connect!!!";
         }
+        */
     QSqlQuery query;
-    QString command1 = QString::fromStdString("DROP DATABASE Course6");
-    QString command2 = QString::fromStdString("create database Course6");
-    QString command3 = QString::fromStdString("USE Course6");
-    QString command4 = QString::fromStdString("CREATE TABLE peoplelist (id char(8),Nowfloor int ,Destination int ,Number int)");
-    QString command5 = QString::fromStdString("select * FROM peoplelist");
-    QString command6 = QString::fromStdString("SHOW TABLES");
-    QString command7 = QString::fromStdString("LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/data.csv' INTO TABLE peoplelist FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\n' IGNORE 1 ROWS");
-    query.exec(command1);
-    query.exec(command2);
-    query.exec(command3);
-    query.exec(command4);
-    query.exec(command5);
-    query.exec(command6);
-    query.exec(command7);
-    qDebug() << query.lastError();
+    //QString command1 = QString::fromStdString("DROP DATABASE FINAL");
+    //QString command2 = QString::fromStdString("create database FINAL");
+    //QString command3 = QString::fromStdString("USE FINAL");
+    //QString command4 = QString::fromStdString("CREATE TABLE initial_condition (ID char(8),Nowfloor int ,Destination int ,Number int)");
+    //QString command5 = QString::fromStdString("select * FROM initial_condition");
+    //QString command6 = QString::fromStdString("SHOW TABLES");
+    //QString command7 = QString::fromStdString("LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/initial_condition.csv' INTO TABLE initial_condition FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\n' IGNORE 1 ROWS");
+    //query.exec(command1);
+    //query.exec(command2);
+    //query.exec(command3);
+    //query.exec(command4);
+    //query.exec(command5);
+    //query.exec(command6);
+    //query.exec(command7); JudgeWindow load 過 data，Building 不要再load!!!!，會重複load
+    //qDebug() << query.lastError();
 
-    query.exec("select * from peoplelist");
-    srand( time(NULL) );
-    int random = rand()%30 + 1;
+    //Create condition_string for random number we get
+    string condition_string;
+    if (random<10) //ex.00007-
+       condition_string = "0000" + to_string(random) + "-";
+    else if(random<100) //ex.00096-
+       condition_string = "000" + to_string(random) + "-";
+    else  //ex.00296-
+       condition_string = "00" + to_string(random) + "-";
+
     qDebug() << random;
-    string random_string = "000" + to_string (random);
-    string real_string = "SELECT * from peoplelist WHERE id LIKE '%" + random_string + "%'";
+    //Get all floor information(peoplenum,destination) from a random condition
+    query.exec(QString::fromStdString("select * FROM initial_condition"));
+    string real_string = "SELECT * from initial_condition WHERE id LIKE '" + condition_string + "%'";
+
     QString q_str = QString::fromStdString(real_string);
     query.exec(q_str);
-
+    qDebug()<<q_str;
+    int index = 0;
+    p1.wait_to_leave.clear();
+    int index2=0;
     while(query.next())
     {
-        /*
-        qDebug() << QString::fromStdString(random_string) << QVariant(query.value(2)).toString() << QVariant(query.value(3)).toString();
-        if(query.value(1).toString() == QString::fromStdString(to_string(index))){
-            p1.destination = QVariant(query.value(2)).toString();
-            p1.peoplenum = QVariant(query.value(3)).toString();
-        }
-        */
+        p1.arrive_people[(query.value(2)).toInt()-1] = query.value(3).toInt();
+        p1.wait_to_leave.push_back((query.value(3)).toInt());
         p1.destination.push_back((query.value(2)).toInt());
-        p1.peoplenum.push_back((query.value(3)).toInt());
+        qDebug()<<index2;
+        index2++;
     }
-    qDebug() << p1.peoplenum;
-    qDebug() << p1.destination;
-    //schedule.setSchedule(p1);
+
+    for(int j=0;j<p1.wait_to_leave.size();j++)
+        qDebug() << p1.arrive_people[j] << p1.wait_to_leave[j] << p1.destination[j];
+    //Call scheduling Algorithm，store all information in p1
+    schedule.setSchedule(p1,data);
 
 }
 void Building::run(int index)
 {
-    string s = judge.getData(index);
+    int times;
+    qDebug() << index << schedule.getDoorIO(schedule.index) << schedule.getElevatorPeople(schedule.index);
+    //取測資
+    string s = judge.getData(index,schedule.getDoorIO(schedule.index),times);
+
+    qDebug() << "input string:"<< QString::fromStdString(s);
     data.testdata1 = s;
-    //string s2 = add1.solve(s);
-    //qDebug()<<QString::fromStdString(s);
-    string s2 = floor[index] -> p -> solve(s);
-    //qDebug()<<index<<QString::fromStdString(s2);
-    //qDebug()<<"ENDTEST";
+    qDebug() << QString::fromStdString(s);
+    string s2;
+
+    //單一測資重複run，取時間平均
+    for(int i=0;i<times;i++)
+    {
+        if(s=="GIVEUP")
+            s2 = "";
+        else{
+            qDebug() << "floor:" << index-1;
+            s2 = floor[index-1] -> p -> solve(s);
+            qDebug() << QString::fromStdString(s2);
+        }
+    }
     data.submit1 = s2;
-    bool correct = judge.submitData(s2);
+    bool correct = judge.submitData(s2,index);
     data.correct1 = correct;
     data.spendtime1 = judge.getSpendTime();
-    data.score = judge.getScore();
 }
 void Building::start_simulation()
 {
     timer.start(100);
     timer.setSingleShot(true);
-    //index = index+ 1;
 }
 void Building::update()
 {
-    //data.nowfloor = schedule.getNowFloor(); //注意!!!!!不能重複寫getNowFloor，會一直+1!!!
-    if(data.nowfloor!=0){
-        run(data.nowfloor);
-        timer.start(1000);
+    qDebug() << "RRRR" ;
+    qDebug() << schedule.index;
+    data.nowfloor = schedule.getNowFloor(schedule.index); //注意!!!!!不能重複寫getNowFloor，會一直+1!!!
+    qDebug() << data.nowfloor;
+    if(schedule.terminate)
+    {
+        if(schedule.getDoorIO(data.nowfloor)==1)//People in, elevator people ++,solve problem
+        {
+            data.elevatorpeople = data.elevatorpeople + schedule.getElevatorPeople(schedule.index);
+
+            if(schedule.index ==0)
+                data.distance = 0;
+            else
+                data.distance = data.distance + abs(schedule.getNowFloor(schedule.index) - schedule.getNowFloor(schedule.index-1));
+
+            for(int i=0;i<schedule.getElevatorPeople(schedule.index);i++)
+            {
+                run(data.nowfloor); //run完之後
+                timer.start(100);   //再跑timer
+            }
+        }
+        else //People out, elevator people--, peoplenum of departure -- (arrived at destination), solve problem
+        {
+            data.elevatorpeople = data.elevatorpeople - schedule.getElevatorPeople(schedule.index);
+
+            if(schedule.index ==0)
+                data.distance = 0;
+            else
+                data.distance = data.distance + abs(schedule.getNowFloor(schedule.index) - schedule.getNowFloor(schedule.index-1));
+
+            for(int i=0;i<schedule.getElevatorPeople(schedule.index);i++)
+            {
+                run(data.nowfloor); //run完之後
+                timer.start(100);   //再跑timer
+            }
+        }
+        schedule.index = schedule.index + 1; //跑完一行scheduling後，index++
     }
-    else{
+    else
+    {
         timer.stop();
     }
-
+    qDebug() << "DDDD" ;
     emit this->updateGUI();
+    qDebug() << "CCCC" ;
 }

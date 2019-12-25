@@ -19,6 +19,8 @@ vector<int> MyMath::stringtoVectorInt(string s)
 }
 vector<double> MyMath::stringtoVectordouble(string s)
 {
+    qDebug()<<"stringtovectdouble";
+    qDebug() << QString::fromStdString(s);
     vector<double> vec;
 
     string::size_type pos=0,prev=0;
@@ -28,6 +30,9 @@ vector<double> MyMath::stringtoVectordouble(string s)
         prev = ++pos;
     }
     vec.push_back(stod(s.substr(prev)));
+
+    qDebug()<<"stringtoVecdoubleEnd";
+
     return vec;
 }
 string MyMath::vectorIntToString(vector<int> vec)
@@ -96,7 +101,6 @@ string MyMath::vectordoubleToString(vector<double> vec)
     }
     return result;
 }
-
 vector<string> MyMath::stringToVectorString(string s)
 {
     vector<string> vec;

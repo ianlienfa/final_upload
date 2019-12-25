@@ -2,12 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QDebug>
-#include <QSqlDatabase>
 #include <QSqlResult>
+#include <QSqlDatabase>
 #include "building.h"
-#include "data.h"
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -21,18 +18,11 @@ public:
     ~MainWindow();
     Building building;
     Data windata;
-    int innum;
-    void connectDB();
-
 private slots:
-    void on_pushButton_clicked();
-    void on_pushButton_2_clicked();
     void on_pushButton_3_clicked();
     void slot_update_data();
 
 private:
     Ui::MainWindow *ui;
-    int count = 0;
-    double spendtime = 0;
 };
 #endif // MAINWINDOW_H

@@ -8,7 +8,8 @@ class People
 {
 public:
     People();
-    vector<int> peoplenum;
+    vector<int> wait_to_leave;
+    int arrive_people[27];
     vector<int> destination;
 };
 

@@ -16,61 +16,90 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    add1.cpp \
+    Add_10.cpp \
     building.cpp \
     closest_path.cpp \
     data.cpp \
-    easycity1.cpp \
-    escape.cpp \
-    factorial.cpp \
-    fib.cpp \
+    easycity2_25.cpp \
+    escape_13.cpp \
+    factorial_8.cpp \
+    fib_5.cpp \
+    findperiodstring_15.cpp \
     floor.cpp \
+    getsolution_19.cpp \
     judge.cpp \
-    largestroot.cpp \
+    judgewindow.cpp \
+    largefactorial_16.cpp \
+    largestroot_6.cpp \
     longest_path.cpp \
+    longestcommonsubstring_18.cpp \
+    longestpeekpalindrome_20.cpp \
     main.cpp \
     mainwindow.cpp \
-    minesweeper.cpp \
+    mario_12.cpp \
+    maze_21.cpp \
+    minesweeper_2.cpp \
     mydatabase.cpp \
     mymath.cpp \
     myother.cpp \
+    mystring.cpp \
     mytree.cpp \
-    paperpassing.cpp \
+    paperpassing_3.cpp \
     people.cpp \
     prime.cpp \
+    primedistance_11.cpp \
     problemset.cpp \
     scheduler.cpp \
-    shygame.cpp \
-    treewalk.cpp
+    shortest_longest_1.cpp \
+    shortest_summation_9.cpp \
+    shygame_4.cpp \
+    sub_14.cpp \
+    sumoflarge_17.cpp \
+    treewalk_7.cpp
 
 HEADERS += \
-    add1.h \
+    Add_10.h \
     building.h \
     closest_path.h \
     data.h \
-    easycity1.h \
-    escape.h \
-    factorial.h \
-    fib.h \
+    easycity2_25.h \
+    escape_13.h \
+    factorial_8.h \
+    fib_5.h \
+    findperiodstring_15.h \
     floor.h \
+    getsolution_19.h \
     judge.h \
-    largestroot.h \
+    judgewindow.h \
+    largefactorial_16.h \
+    largestroot_6.h \
     longest_path.h \
+    longestcommonsubstring_18.h \
+    longestpeekpalindrome_20.h \
     mainwindow.h \
-    minesweeper.h \
+    mario_12.h \
+    maze_21.h \
+    minesweeper_2.h \
     mydatabase.h \
     mymath.h \
     myother.h \
+    mystring.h \
     mytree.h \
-    paperpassing.h \
+    paperpassing_3.h \
     people.h \
     prime.h \
+    primedistance_11.h \
     problemset.h \
     scheduler.h \
-    shygame.h \
-    treewalk.h
+    shortest_longest_1.h \
+    shortest_summation_9.h \
+    shygame_4.h \
+    sub_14.h \
+    sumoflarge_17.h \
+    treewalk_7.h
 
 FORMS += \
+    judgewindow.ui \
     mainwindow.ui
 
 # Default rules for deployment.

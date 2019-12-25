@@ -1,33 +1,31 @@
 #include "scheduler.h"
 #include <QDebug>
-/*before you use:
 
-please change the path under to the right place
-
-*/
 void Scheduler::setSchedule(People p, Data data)    //there's number of people on each floor and their destination saving inside People
 {
     int iter = 0;
-    while(iter != p.peoplenum.size())   //let iterator run through all floor
+    while(iter != p.wait_to_leave.size())   //let iterator run through all floor
     {
-        while(p.peoplenum[iter] > 0)
+        while(p.wait_to_leave[iter] > 0)
         {
            nowFloor.push_back(iter+1);  //generate the schedule based on the floor level people are on
            nowFloor.push_back(p.destination[iter]);     //generate the schedule based on the destination floor level people hope to go
 
            //start from an empty elevator
            //not intil emptying people on the first level that the elevator moves to the second, etc.
-           if(p.peoplenum[iter] >= 10)
+           if(p.wait_to_leave[iter] >= 10)
            {
-               number.push_back(10);
-               p.peoplenum[iter] -= 10;
+               number.push_back(10); //in
+               p.wait_to_leave[iter] -= 10;
+               number.push_back(10); //out
            }
            else
            {
-               number.push_back(p.peoplenum[iter]);
-               p.peoplenum[iter] = 0;
+               number.push_back(p.wait_to_leave[iter]); //in
+               number.push_back(p.wait_to_leave[iter]); //out
+               p.wait_to_leave[iter] = 0;
            }
-           number.push_back(0); //arrived at the destination, empty the elevator
+           //number.push_back(0); //arrived at the destination, empty the elevator
            IO.push_back(1);     //people in
            IO.push_back(0);     //people out
         }
@@ -35,9 +33,7 @@ void Scheduler::setSchedule(People p, Data data)    //there's number of people o
     }
 
     toFile(nowFloor, IO, number);   //copy the data to file
-    data.elevatorpeople = number;
 
-    data.distance.push_back(0);
     for(int i = 0; i < nowFloor.size()-1; i++)
     {
         int difference;
@@ -46,7 +42,6 @@ void Scheduler::setSchedule(People p, Data data)    //there's number of people o
         else {
             difference = nowFloor[i] - nowFloor[i+1];
         }
-        data.distance.push_back(data.distance[i] + difference);
         //qDebug() << "data.distance[" << i << "]:" << data.distance[i] << "  nowFloor[" << i+1 << "]:" << nowFloor[i+1] << "  nowFloor[" << i << "]:" << nowFloor[i] ;
     }
 //    for(int i = 0; i < data.distance.size(); i++)
@@ -54,39 +49,31 @@ void Scheduler::setSchedule(People p, Data data)    //there's number of people o
 //        qDebug() << "distance accumulated:" << i << ":" << data.distance[i];
 //    }
 
-
 }
-
-
 int Scheduler::getNowFloor(int index)
 {
-//    index = index + 1;
-//    qDebug() <<"FLOOR"<< answer;
-
     if(index >= nowFloor.size())
     {
         qDebug() << "out of index.";
-        return NULL;
+        terminate = 0;
     }
-    return nowFloor[index];
 
+    int real_floor = nowFloor[index];
+    return real_floor;
 }
 
 int Scheduler::getDoorIO(int index)
 {
-
     if(index >= nowFloor.size())
     {
         qDebug() << "out of index.";
         return NULL;
     }
     return IO[index];
-
 }
 
 int Scheduler::getElevatorPeople(int index)
 {
-
     if(index >= nowFloor.size())
     {
         qDebug() << "out of index.";
@@ -94,12 +81,10 @@ int Scheduler::getElevatorPeople(int index)
     }
     return number[index];
 }
-
-
 void Scheduler::toFile(vector<int> nowFloor, vector<bool> IO, vector<int> number)
 {
     ofstream outfile;
-    outfile.open("C:\\Users\\ianli\\Documents\\AOOP_final\\Schedule.txt");
+    outfile.open("C:\\Users\\USER\\Desktop\\AOOPNCTU\\Lab\\Final Project\\Lab11\\Schedule.txt");
     outfile.clear();
     for(int i = 0; i < nowFloor.size(); i++)
     {
@@ -107,3 +92,4 @@ void Scheduler::toFile(vector<int> nowFloor, vector<bool> IO, vector<int> number
     }
     outfile.close();
 }
+

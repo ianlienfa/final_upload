@@ -6,6 +6,8 @@ longest_path::longest_path()
 }
 string longest_path::solve(string s)
 {
+    qDebug()<<"longest_path";
+
     vector<double> vec = stringtoVectordouble(s);
     vector<double> result,max_vec;
 

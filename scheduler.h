@@ -8,9 +8,9 @@
 #include <fstream>
 #include "people.h"
 #include "data.h"
-using namespace std;
 typedef bool Behavior;  //1進電梯, 0出電梯
 
+using namespace std;
 
 class Scheduler
 {
@@ -21,12 +21,13 @@ class Scheduler
         int getDoorIO(int);
         int getElevatorPeople(int);
         void toFile(vector<int> nowFloor, vector<bool> IO, vector<int> number);
+        int index = 0; //index to access nowFloor,IO,number
+        bool terminate = 1;
 
     private:
         vector<int> nowFloor;  // temp
-        vector<bool> IO;
+        vector<bool> IO;       // In or Out
         vector<int> number;    //how many people in the elevator
-        int index;             // temp
         int costtime;
         int distance;
 };

@@ -47,5 +47,4 @@ string MyDatabase::vectorStringToString(vector<string> vc)
         result += " ";
     }
     result += vc.back();
-    return result;
 }

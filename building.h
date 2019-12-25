@@ -3,31 +3,38 @@
 
 #include "data.h"
 #include "judge.h"
-#include "add1.h"
-#include "prime.h"
-#include "closest_path.h"
+#include "judgewindow.h"
 #include "problemset.h"
 #include "floor.h"
-#include "longest_path.h"
-#include "minesweeper.h"
-#include "paperpassing.h"
-#include "fib.h"
-#include "largestroot.h"
-#include "factorial.h"
-#include "treewalk.h"
-#include "escape.h"
 #include "scheduler.h"
-#include "findperiodstring.h"
-#include "largefactorial.h"
-#include "sumoflarge.h"
-#include "easycity2.h"
-#include "shygame.h"
-
 #include <QTimer>
 #include <iostream>
+#include <cmath>
+
+#include "shortest_longest_1.h"
+#include "minesweeper_2.h"
+#include "paperpassing_3.h"
+#include "shygame_4.h"
+#include "fib_5.h"
+#include "largestroot_6.h"
+#include "treewalk_7.h"
+#include "factorial_8.h"
+#include "shortest_summation_9.h"
+#include "Add_10.h"
+#include "primedistance_11.h"
+#include "mario_12.h"
+#include "escape_13.h"
+#include "sub_14.h"
+#include "findperiodstring_15.h"
+#include "largefactorial_16.h"
+#include "sumoflarge_17.h"
+#include "longestcommonsubstring_18.h"
+#include "getsolution_19.h"
+#include "longestpeekpalindrome_20.h"
+#include "maze_21.h"
+#include "easycity2_25.h"
+
 using namespace std;
-
-
 
 class Building:public QObject
 {
@@ -40,10 +47,8 @@ class Building:public QObject
         People p1;
         Scheduler schedule;
     private:
-        Judge judge;
+        JudgeWindow judge;
         Data data;
-        Add1 add1;
-        Prime prime;
         Floor *floor[30];
         int innum;
         QTimer timer;
