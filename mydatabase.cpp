@@ -40,11 +40,35 @@ vector<QString> MyDatabase::stringToVectorQString(string s)
 
 string MyDatabase::vectorStringToString(vector<string> vc)
 {
+//    qDebug() << "vecStringToString enter";
     string result;
     for(int i = 0; i < vc.size()-1; i++)
     {
+
         result += vc[i];
         result += " ";
     }
     result += vc.back();
+//    qDebug() << "vecStringToString out";
+    return result;
+}
+
+
+string MyDatabase::vectorStringToStringForSQL(vector<string> vc)
+{
+//    qDebug() << "vecStringToString enter";
+    string result;
+    for(int i = 0; i < vc.size()-1; i++)
+    {
+        if(vc[i] == "")
+        {
+            result += "NULL";
+        }
+        else
+            result += vc[i];
+        result += " ";
+    }
+    result += vc.back();
+//    qDebug() << "vecStringToString out";
+    return result;
 }

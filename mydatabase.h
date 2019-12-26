@@ -19,6 +19,7 @@ public:
     vector<string> stringToVectorString(string);
     vector<QString> stringToVectorQString(string);
     string vectorStringToString(vector<string>);
+    string vectorStringToStringForSQL(vector<string>);
 
 };
 
