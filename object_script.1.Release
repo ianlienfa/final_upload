@@ -2,6 +2,7 @@ release/Add_10.o
 release/building.o
 release/closest_path.o
 release/data.o
+release/easycity1_22.o
 release/easycity2_25.o
 release/escape_13.o
 release/factorial_8.o

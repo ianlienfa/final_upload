@@ -9,13 +9,15 @@ JudgeWindow::JudgeWindow(QWidget *parent) :
 
     for(int i=0;i<27;i++)
     {
-        for(int j=0;j<4;j++)
+        for(int j=0;j<5;j++)
             ui -> gridLayout ->addWidget(&showline[i][j],i,j);
     }
     for(int i=0;i<27;i++)
     {
-        for(int j=0;j<1;j++)
+        for(int j=0;j<1;j++){
             ui -> checkbox ->addWidget(&showbox[i][j],i,j);
+          //  showbox[i][j] = checked
+        }
     }
 
     for(int i=0;i<21;i++)
@@ -68,6 +70,19 @@ JudgeWindow::~JudgeWindow()
 }
 string JudgeWindow::getData(int floor,int b,int& datatimes)
 {
+    if(floor_front==0)
+    {
+        distance_real=0;
+        floor_front = floor;
+    }
+
+    else if(floor_front!=floor)
+    {
+        distance_real = distance_real + abs(floor-floor_front);
+        floor_front = floor;
+    }
+
+    //distance_real = abs()
     for(int i=0;i<27;i++)
         showbox[i][0].setDisabled(true);
 
@@ -92,7 +107,7 @@ string JudgeWindow::getData(int floor,int b,int& datatimes)
        if(random<10)
            floor_string = to_string(floor) + "-" + "0000" + to_string(random);
        else
-           floor_string = to_string(floor) + "-" + "0000" + to_string(random);
+           floor_string = to_string(floor) + "-" + "000" + to_string(random);
     }
 
     string real_string = "SELECT * from testdata WHERE id LIKE '%" + floor_string + "%'";
@@ -139,6 +154,7 @@ bool JudgeWindow::submitData(string answer_cal,int floor)
     qDebug() << score[floor-1];
     if (answer == answer_cal){
         score[floor-1] = score[floor-1] + 10000000000 + pow(2,test_data[floor-1]-1);
+        pass[floor-1] = pass[floor-1] + 1;
         if(floor<22){
             costtime = timer.nsecsElapsed();
             costtime = costtime/10; //costtime 平均(因為一筆測資跑了十次)
@@ -194,7 +210,38 @@ int JudgeWindow::getConditionNum()
         showline[i][1].setText(QString::number((p1.arrive_people[i])));
         showline[i][2].setText(QString::number(0));
         showline[i][3].setText(QString::number(0));
+        showline[i][4].setText(QString::number(p1.wait_to_leave[i]+p1.arrive_people[i]));
+        total_ques[i] = p1.wait_to_leave[i]+p1.arrive_people[i];
     }
     return random;
 }
 
+
+void JudgeWindow::on_pushButton_clicked()
+{
+    QSqlDatabase database;
+    database = QSqlDatabase::addDatabase("QMYSQL");
+    database.setHostName("140.113.146.126");
+    database.setUserName("aoopstudent");
+    database.setPassword("tsaimother");
+    database.setDatabaseName("aoopstudentuse");
+    database.setPort(3306);
+    bool ok = database.open();
+        if(ok){
+            qDebug() << "Succeessful Connection.TA";
+        }
+        else{
+            qDebug() << "Error88787: Cannot connect!!!";
+        }
+    for(int i=0;i<27;i++){
+        QString command2 = QString::fromStdString("INSERT INTO floorscore VALUES('0610789' , '陳奕群','0713415' , '林恩衍',")+QString::number(i+1)+", "+QString::number(total_cossttime[i])+", "+QString::number(pass[i])+", " +QString::number(total_ques[i])+", "+QString::number(score[i])+")";
+        QSqlQuery query;
+        query.exec(command2)?qDebug()<<"CORRECT":qDebug()<<query.lastError();
+        qDebug()<<command2;
+    }
+    QSqlQuery query;
+    QString command3 = QString::fromStdString("INSERT INTO totalpath VALUES ( '0610789' , '陳奕群','0713415' , '林恩衍',")+QString::number(distance_real)+")";
+    //QString command4 = QString::fromStdString("INSERT INTO floorscore (floor,timespent,pass,'totalques','totalscore')VALUES(")+QString::number()+")";
+    query.exec(command3)?qDebug()<<"CORRECT":qDebug()<<query.lastError();
+    qDebug()<<command3;
+}

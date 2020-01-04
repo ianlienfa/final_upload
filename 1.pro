@@ -20,6 +20,7 @@ SOURCES += \
     building.cpp \
     closest_path.cpp \
     data.cpp \
+    easycity1_22.cpp \
     easycity2_25.cpp \
     escape_13.cpp \
     factorial_8.cpp \
@@ -62,6 +63,7 @@ HEADERS += \
     building.h \
     closest_path.h \
     data.h \
+    easycity1_22.h \
     easycity2_25.h \
     escape_13.h \
     factorial_8.h \

@@ -30,7 +30,7 @@ Building::Building()
     floor[18] = new Floor(new Gaussian());
     floor[19] = new Floor(new LongestPalindrome());
     floor[20] = new Floor(new Maze());
-    //floor[21] = new Floor(new TreeWalk());
+    floor[21] = new Floor(new Easycity1());
     //floor[15] = new Floor(new Add1());
     floor[24] = new Floor(new EasyCity2());
     //floor[11] = new Floor(new TreeWalk());
@@ -146,10 +146,10 @@ void Building::update()
     qDebug() << "RRRR" ;
     qDebug() << schedule.index;
     data.nowfloor = schedule.getNowFloor(schedule.index); //注意!!!!!不能重複寫getNowFloor，會一直+1!!!
-    qDebug() << data.nowfloor;
+    qDebug() << data.nowfloor << schedule.getDoorIO(schedule.index);
     if(schedule.terminate)
     {
-        if(schedule.getDoorIO(data.nowfloor)==1)//People in, elevator people ++,solve problem
+        if(schedule.getDoorIO(schedule.index)==1)//People in, elevator people ++,solve problem
         {
             data.elevatorpeople = data.elevatorpeople + schedule.getElevatorPeople(schedule.index);
 
@@ -179,6 +179,7 @@ void Building::update()
                 timer.start(100);   //再跑timer
             }
         }
+
         schedule.index = schedule.index + 1; //跑完一行scheduling後，index++
     }
     else

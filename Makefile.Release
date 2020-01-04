@@ -51,6 +51,7 @@ SOURCES       = Add_10.cpp \
 		building.cpp \
 		closest_path.cpp \
 		data.cpp \
+		easycity1_22.cpp \
 		easycity2_25.cpp \
 		escape_13.cpp \
 		factorial_8.cpp \
@@ -93,6 +94,7 @@ OBJECTS       = release/Add_10.o \
 		release/building.o \
 		release/closest_path.o \
 		release/data.o \
+		release/easycity1_22.o \
 		release/easycity2_25.o \
 		release/escape_13.o \
 		release/factorial_8.o \
@@ -137,6 +139,7 @@ DIST          =  Add_10.h \
 		building.h \
 		closest_path.h \
 		data.h \
+		easycity1_22.h \
 		easycity2_25.h \
 		escape_13.h \
 		factorial_8.h \
@@ -175,6 +178,7 @@ DIST          =  Add_10.h \
 		building.cpp \
 		closest_path.cpp \
 		data.cpp \
+		easycity1_22.cpp \
 		easycity2_25.cpp \
 		escape_13.cpp \
 		factorial_8.cpp \
@@ -230,10 +234,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) 1.zip $(SOURCES) $(DIST) 1.pro C:/Qt/5.13.1/mingw73_64/mkspecs/features/spec_pre.prf C:/Qt/5.13.1/mingw73_64/mkspecs/qdevice.pri C:/Qt/5.13.1/mingw73_64/mkspecs/features/device_config.prf C:/Qt/5.13.1/mingw73_64/mkspecs/common/sanitize.conf C:/Qt/5.13.1/mingw73_64/mkspecs/common/gcc-base.conf C:/Qt/5.13.1/mingw73_64/mkspecs/common/g++-base.conf C:/Qt/5.13.1/mingw73_64/mkspecs/common/angle.conf C:/Qt/5.13.1/mingw73_64/mkspecs/features/win32/windows_vulkan_sdk.prf C:/Qt/5.13.1/mingw73_64/mkspecs/common/windows-vulkan.conf C:/Qt/5.13.1/mingw73_64/mkspecs/common/g++-win32.conf C:/Qt/5.13.1/mingw73_64/mkspecs/common/windows-desktop.conf C:/Qt/5.13.1/mingw73_64/mkspecs/qconfig.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3danimation.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3danimation_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dcore.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dcore_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dextras.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dextras_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dinput.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dinput_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dlogic.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dlogic_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dquick.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dquick_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dquickanimation.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dquickanimation_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dquickextras.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dquickextras_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dquickinput.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dquickinput_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dquickrender.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dquickrender_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dquickscene2d.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dquickscene2d_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3drender.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3drender_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_accessibility_support_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_axbase.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_axbase_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_axcontainer.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_axcontainer_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_axserver.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_axserver_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_bluetooth.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_bluetooth_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_bootstrap_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_concurrent.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_concurrent_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_core.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_core_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_dbus.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_dbus_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_designer.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_designer_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_designercomponents_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_devicediscovery_support_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_edid_support_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_egl_support_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_fb_support_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_fontdatabase_support_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_gamepad.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_gamepad_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_gui.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_gui_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_help.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_help_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_location.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_location_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_multimedia.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_multimedia_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_multimediawidgets.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_network.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_network_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_nfc.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_nfc_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_opengl.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_opengl_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_openglextensions.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_openglextensions_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_packetprotocol_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_platformcompositor_support_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_positioning.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_positioning_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_positioningquick.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_positioningquick_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_printsupport.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_printsupport_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_qml.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_qml_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_qmldebug_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_qmldevtools_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_qmltest.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_qmltest_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_quick.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_quick_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_quickcontrols2.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_quickparticles_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_quickshapes_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_quicktemplates2.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_quickwidgets.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_quickwidgets_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_remoteobjects.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_remoteobjects_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_repparser.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_repparser_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_scxml.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_scxml_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_sensors.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_sensors_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_serialbus.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_serialbus_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_serialport.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_serialport_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_sql.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_sql_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_svg.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_svg_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_testlib.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_testlib_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_texttospeech.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_texttospeech_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_theme_support_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_uiplugin.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_uitools.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_uitools_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_vulkan_support_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_webchannel.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_webchannel_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_websockets.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_websockets_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_widgets.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_widgets_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_windowsuiautomation_support_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_winextras.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_winextras_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_xml.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_xml_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_xmlpatterns.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/features/qt_functions.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/qt_config.prf C:/Qt/5.13.1/mingw73_64/mkspecs/win32-g++/qmake.conf C:/Qt/5.13.1/mingw73_64/mkspecs/features/spec_post.prf .qmake.stash C:/Qt/5.13.1/mingw73_64/mkspecs/features/exclusive_builds.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/toolchain.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/default_pre.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/win32/default_pre.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/resolve_config.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/exclusive_builds_post.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/default_post.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/build_pass.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/qml_debug.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/precompile_header.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/warn_on.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/qt.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/resources.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/moc.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/win32/opengl.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/uic.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/qmake_use.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/file_copies.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/win32/windows.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/testcase_targets.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/exceptions.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/yacc.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/lex.prf 1.pro C:/Qt/5.13.1/mingw73_64/lib/Qt5Widgets.prl C:/Qt/5.13.1/mingw73_64/lib/Qt5Gui.prl C:/Qt/5.13.1/mingw73_64/lib/Qt5Sql.prl C:/Qt/5.13.1/mingw73_64/lib/Qt5Core.prl C:/Qt/5.13.1/mingw73_64/lib/qtmain.prl    C:/Qt/5.13.1/mingw73_64/mkspecs/features/data/dummy.cpp Add_10.h building.h closest_path.h data.h easycity2_25.h escape_13.h factorial_8.h fib_5.h findperiodstring_15.h floor.h getsolution_19.h judge.h judgewindow.h largefactorial_16.h largestroot_6.h longest_path.h longestcommonsubstring_18.h longestpeekpalindrome_20.h mainwindow.h mario_12.h maze_21.h minesweeper_2.h mydatabase.h mymath.h myother.h mystring.h mytree.h paperpassing_3.h people.h prime.h primedistance_11.h problemset.h scheduler.h shortest_longest_1.h shortest_summation_9.h shygame_4.h sub_14.h sumoflarge_17.h treewalk_7.h  Add_10.cpp building.cpp closest_path.cpp data.cpp easycity2_25.cpp escape_13.cpp factorial_8.cpp fib_5.cpp findperiodstring_15.cpp floor.cpp getsolution_19.cpp judge.cpp judgewindow.cpp largefactorial_16.cpp largestroot_6.cpp longest_path.cpp longestcommonsubstring_18.cpp longestpeekpalindrome_20.cpp main.cpp mainwindow.cpp mario_12.cpp maze_21.cpp minesweeper_2.cpp mydatabase.cpp mymath.cpp myother.cpp mystring.cpp mytree.cpp paperpassing_3.cpp people.cpp prime.cpp primedistance_11.cpp problemset.cpp scheduler.cpp shortest_longest_1.cpp shortest_summation_9.cpp shygame_4.cpp sub_14.cpp sumoflarge_17.cpp treewalk_7.cpp judgewindow.ui mainwindow.ui    
+	$(ZIP) 1.zip $(SOURCES) $(DIST) 1.pro C:/Qt/5.13.1/mingw73_64/mkspecs/features/spec_pre.prf C:/Qt/5.13.1/mingw73_64/mkspecs/qdevice.pri C:/Qt/5.13.1/mingw73_64/mkspecs/features/device_config.prf C:/Qt/5.13.1/mingw73_64/mkspecs/common/sanitize.conf C:/Qt/5.13.1/mingw73_64/mkspecs/common/gcc-base.conf C:/Qt/5.13.1/mingw73_64/mkspecs/common/g++-base.conf C:/Qt/5.13.1/mingw73_64/mkspecs/common/angle.conf C:/Qt/5.13.1/mingw73_64/mkspecs/features/win32/windows_vulkan_sdk.prf C:/Qt/5.13.1/mingw73_64/mkspecs/common/windows-vulkan.conf C:/Qt/5.13.1/mingw73_64/mkspecs/common/g++-win32.conf C:/Qt/5.13.1/mingw73_64/mkspecs/common/windows-desktop.conf C:/Qt/5.13.1/mingw73_64/mkspecs/qconfig.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3danimation.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3danimation_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dcore.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dcore_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dextras.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dextras_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dinput.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dinput_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dlogic.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dlogic_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dquick.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dquick_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dquickanimation.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dquickanimation_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dquickextras.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dquickextras_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dquickinput.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dquickinput_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dquickrender.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dquickrender_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dquickscene2d.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3dquickscene2d_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3drender.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_3drender_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_accessibility_support_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_axbase.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_axbase_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_axcontainer.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_axcontainer_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_axserver.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_axserver_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_bluetooth.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_bluetooth_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_bootstrap_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_concurrent.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_concurrent_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_core.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_core_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_dbus.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_dbus_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_designer.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_designer_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_designercomponents_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_devicediscovery_support_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_edid_support_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_egl_support_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_fb_support_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_fontdatabase_support_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_gamepad.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_gamepad_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_gui.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_gui_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_help.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_help_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_location.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_location_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_multimedia.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_multimedia_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_multimediawidgets.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_network.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_network_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_nfc.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_nfc_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_opengl.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_opengl_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_openglextensions.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_openglextensions_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_packetprotocol_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_platformcompositor_support_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_positioning.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_positioning_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_positioningquick.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_positioningquick_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_printsupport.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_printsupport_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_qml.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_qml_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_qmldebug_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_qmldevtools_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_qmltest.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_qmltest_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_quick.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_quick_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_quickcontrols2.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_quickparticles_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_quickshapes_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_quicktemplates2.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_quickwidgets.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_quickwidgets_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_remoteobjects.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_remoteobjects_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_repparser.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_repparser_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_scxml.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_scxml_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_sensors.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_sensors_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_serialbus.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_serialbus_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_serialport.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_serialport_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_sql.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_sql_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_svg.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_svg_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_testlib.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_testlib_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_texttospeech.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_texttospeech_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_theme_support_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_uiplugin.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_uitools.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_uitools_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_vulkan_support_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_webchannel.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_webchannel_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_websockets.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_websockets_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_widgets.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_widgets_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_windowsuiautomation_support_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_winextras.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_winextras_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_xml.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_xml_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_xmlpatterns.pri C:/Qt/5.13.1/mingw73_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri C:/Qt/5.13.1/mingw73_64/mkspecs/features/qt_functions.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/qt_config.prf C:/Qt/5.13.1/mingw73_64/mkspecs/win32-g++/qmake.conf C:/Qt/5.13.1/mingw73_64/mkspecs/features/spec_post.prf .qmake.stash C:/Qt/5.13.1/mingw73_64/mkspecs/features/exclusive_builds.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/toolchain.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/default_pre.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/win32/default_pre.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/resolve_config.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/exclusive_builds_post.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/default_post.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/build_pass.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/qml_debug.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/precompile_header.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/warn_on.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/qt.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/resources.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/moc.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/win32/opengl.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/uic.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/qmake_use.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/file_copies.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/win32/windows.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/testcase_targets.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/exceptions.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/yacc.prf C:/Qt/5.13.1/mingw73_64/mkspecs/features/lex.prf 1.pro C:/Qt/5.13.1/mingw73_64/lib/Qt5Widgets.prl C:/Qt/5.13.1/mingw73_64/lib/Qt5Gui.prl C:/Qt/5.13.1/mingw73_64/lib/Qt5Sql.prl C:/Qt/5.13.1/mingw73_64/lib/Qt5Core.prl C:/Qt/5.13.1/mingw73_64/lib/qtmain.prl    C:/Qt/5.13.1/mingw73_64/mkspecs/features/data/dummy.cpp Add_10.h building.h closest_path.h data.h easycity1_22.h easycity2_25.h escape_13.h factorial_8.h fib_5.h findperiodstring_15.h floor.h getsolution_19.h judge.h judgewindow.h largefactorial_16.h largestroot_6.h longest_path.h longestcommonsubstring_18.h longestpeekpalindrome_20.h mainwindow.h mario_12.h maze_21.h minesweeper_2.h mydatabase.h mymath.h myother.h mystring.h mytree.h paperpassing_3.h people.h prime.h primedistance_11.h problemset.h scheduler.h shortest_longest_1.h shortest_summation_9.h shygame_4.h sub_14.h sumoflarge_17.h treewalk_7.h  Add_10.cpp building.cpp closest_path.cpp data.cpp easycity1_22.cpp easycity2_25.cpp escape_13.cpp factorial_8.cpp fib_5.cpp findperiodstring_15.cpp floor.cpp getsolution_19.cpp judge.cpp judgewindow.cpp largefactorial_16.cpp largestroot_6.cpp longest_path.cpp longestcommonsubstring_18.cpp longestpeekpalindrome_20.cpp main.cpp mainwindow.cpp mario_12.cpp maze_21.cpp minesweeper_2.cpp mydatabase.cpp mymath.cpp myother.cpp mystring.cpp mytree.cpp paperpassing_3.cpp people.cpp prime.cpp primedistance_11.cpp problemset.cpp scheduler.cpp shortest_longest_1.cpp shortest_summation_9.cpp shygame_4.cpp sub_14.cpp sumoflarge_17.cpp treewalk_7.cpp judgewindow.ui mainwindow.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) release/Add_10.o release/building.o release/closest_path.o release/data.o release/easycity2_25.o release/escape_13.o release/factorial_8.o release/fib_5.o release/findperiodstring_15.o release/floor.o release/getsolution_19.o release/judge.o release/judgewindow.o release/largefactorial_16.o release/largestroot_6.o release/longest_path.o release/longestcommonsubstring_18.o release/longestpeekpalindrome_20.o release/main.o release/mainwindow.o release/mario_12.o release/maze_21.o release/minesweeper_2.o release/mydatabase.o release/mymath.o release/myother.o release/mystring.o release/mytree.o release/paperpassing_3.o release/people.o release/prime.o release/primedistance_11.o release/problemset.o release/scheduler.o release/shortest_longest_1.o release/shortest_summation_9.o release/shygame_4.o release/sub_14.o release/sumoflarge_17.o release/treewalk_7.o release/moc_building.o release/moc_judgewindow.o release/moc_mainwindow.o
+	-$(DEL_FILE) release/Add_10.o release/building.o release/closest_path.o release/data.o release/easycity1_22.o release/easycity2_25.o release/escape_13.o release/factorial_8.o release/fib_5.o release/findperiodstring_15.o release/floor.o release/getsolution_19.o release/judge.o release/judgewindow.o release/largefactorial_16.o release/largestroot_6.o release/longest_path.o release/longestcommonsubstring_18.o release/longestpeekpalindrome_20.o release/main.o release/mainwindow.o release/mario_12.o release/maze_21.o release/minesweeper_2.o release/mydatabase.o release/mymath.o release/myother.o release/mystring.o release/mytree.o release/paperpassing_3.o release/people.o release/prime.o release/primedistance_11.o release/problemset.o release/scheduler.o release/shortest_longest_1.o release/shortest_summation_9.o release/shygame_4.o release/sub_14.o release/sumoflarge_17.o release/treewalk_7.o release/moc_building.o release/moc_judgewindow.o release/moc_mainwindow.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -393,27 +397,40 @@ release/moc_building.cpp: building.h \
 		C:/Qt/5.13.1/mingw73_64/include/QtWidgets/qcheckbox.h \
 		C:/Qt/5.13.1/mingw73_64/include/QtWidgets/qabstractbutton.h \
 		C:/Qt/5.13.1/mingw73_64/include/QtGui/qicon.h \
-		shortest_longest_1.h \
-		mymath.h \
 		problemset.h \
-		Add_10.h \
-		prime.h \
-		closest_path.h \
 		floor.h \
-		longest_path.h \
-		minesweeper_2.h \
-		myother.h \
-		paperpassing_3.h \
-		fib_5.h \
-		largestroot_6.h \
-		mytree.h \
-		factorial_8.h \
-		treewalk_7.h \
-		escape_13.h \
 		scheduler.h \
 		C:/Qt/5.13.1/mingw73_64/include/QtCore/QTimer \
 		C:/Qt/5.13.1/mingw73_64/include/QtCore/qtimer.h \
 		C:/Qt/5.13.1/mingw73_64/include/QtCore/qbasictimer.h \
+		shortest_longest_1.h \
+		mymath.h \
+		minesweeper_2.h \
+		myother.h \
+		paperpassing_3.h \
+		shygame_4.h \
+		fib_5.h \
+		largestroot_6.h \
+		mytree.h \
+		treewalk_7.h \
+		factorial_8.h \
+		shortest_summation_9.h \
+		Add_10.h \
+		primedistance_11.h \
+		mario_12.h \
+		escape_13.h \
+		sub_14.h \
+		findperiodstring_15.h \
+		mystring.h \
+		largefactorial_16.h \
+		sumoflarge_17.h \
+		longestcommonsubstring_18.h \
+		getsolution_19.h \
+		longestpeekpalindrome_20.h \
+		maze_21.h \
+		easycity1_22.h \
+		mydatabase.h \
+		easycity2_25.h \
 		release/moc_predefs.h \
 		C:/Qt/5.13.1/mingw73_64/bin/moc.exe
 	'C:\Qt\5.13.1\mingw73_64\bin\moc.exe' $(DEFINES) --include 'C:/Users/USER/Desktop/AOOPNCTU/Lab/Final Project/Lab11/1/release/moc_predefs.h' -IC:/Qt/5.13.1/mingw73_64/mkspecs/win32-g++ -I'C:/Users/USER/Desktop/AOOPNCTU/Lab/Final Project/Lab11/1' -IC:/Qt/5.13.1/mingw73_64/include -IC:/Qt/5.13.1/mingw73_64/include/QtWidgets -IC:/Qt/5.13.1/mingw73_64/include/QtGui -IC:/Qt/5.13.1/mingw73_64/include/QtANGLE -IC:/Qt/5.13.1/mingw73_64/include/QtSql -IC:/Qt/5.13.1/mingw73_64/include/QtCore -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include building.h -o release/moc_building.cpp
@@ -688,27 +705,40 @@ release/moc_mainwindow.cpp: mainwindow.h \
 		C:/Qt/5.13.1/mingw73_64/include/QtWidgets/QCheckBox \
 		C:/Qt/5.13.1/mingw73_64/include/QtWidgets/qcheckbox.h \
 		C:/Qt/5.13.1/mingw73_64/include/QtWidgets/qabstractbutton.h \
-		shortest_longest_1.h \
-		mymath.h \
 		problemset.h \
-		Add_10.h \
-		prime.h \
-		closest_path.h \
 		floor.h \
-		longest_path.h \
-		minesweeper_2.h \
-		myother.h \
-		paperpassing_3.h \
-		fib_5.h \
-		largestroot_6.h \
-		mytree.h \
-		factorial_8.h \
-		treewalk_7.h \
-		escape_13.h \
 		scheduler.h \
 		C:/Qt/5.13.1/mingw73_64/include/QtCore/QTimer \
 		C:/Qt/5.13.1/mingw73_64/include/QtCore/qtimer.h \
 		C:/Qt/5.13.1/mingw73_64/include/QtCore/qbasictimer.h \
+		shortest_longest_1.h \
+		mymath.h \
+		minesweeper_2.h \
+		myother.h \
+		paperpassing_3.h \
+		shygame_4.h \
+		fib_5.h \
+		largestroot_6.h \
+		mytree.h \
+		treewalk_7.h \
+		factorial_8.h \
+		shortest_summation_9.h \
+		Add_10.h \
+		primedistance_11.h \
+		mario_12.h \
+		escape_13.h \
+		sub_14.h \
+		findperiodstring_15.h \
+		mystring.h \
+		largefactorial_16.h \
+		sumoflarge_17.h \
+		longestcommonsubstring_18.h \
+		getsolution_19.h \
+		longestpeekpalindrome_20.h \
+		maze_21.h \
+		easycity1_22.h \
+		mydatabase.h \
+		easycity2_25.h \
 		release/moc_predefs.h \
 		C:/Qt/5.13.1/mingw73_64/bin/moc.exe
 	'C:\Qt\5.13.1\mingw73_64\bin\moc.exe' $(DEFINES) --include 'C:/Users/USER/Desktop/AOOPNCTU/Lab/Final Project/Lab11/1/release/moc_predefs.h' -IC:/Qt/5.13.1/mingw73_64/mkspecs/win32-g++ -I'C:/Users/USER/Desktop/AOOPNCTU/Lab/Final Project/Lab11/1' -IC:/Qt/5.13.1/mingw73_64/include -IC:/Qt/5.13.1/mingw73_64/include/QtWidgets -IC:/Qt/5.13.1/mingw73_64/include/QtGui -IC:/Qt/5.13.1/mingw73_64/include/QtANGLE -IC:/Qt/5.13.1/mingw73_64/include/QtSql -IC:/Qt/5.13.1/mingw73_64/include/QtCore -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include mainwindow.h -o release/moc_mainwindow.cpp
@@ -941,27 +971,40 @@ release/building.o: building.cpp building.h \
 		C:/Qt/5.13.1/mingw73_64/include/QtWidgets/qcheckbox.h \
 		C:/Qt/5.13.1/mingw73_64/include/QtWidgets/qabstractbutton.h \
 		C:/Qt/5.13.1/mingw73_64/include/QtGui/qicon.h \
-		shortest_longest_1.h \
-		mymath.h \
 		problemset.h \
-		Add_10.h \
-		prime.h \
-		closest_path.h \
 		floor.h \
-		longest_path.h \
-		minesweeper_2.h \
-		myother.h \
-		paperpassing_3.h \
-		fib_5.h \
-		largestroot_6.h \
-		mytree.h \
-		factorial_8.h \
-		treewalk_7.h \
-		escape_13.h \
 		scheduler.h \
 		C:/Qt/5.13.1/mingw73_64/include/QtCore/QTimer \
 		C:/Qt/5.13.1/mingw73_64/include/QtCore/qtimer.h \
-		C:/Qt/5.13.1/mingw73_64/include/QtCore/qbasictimer.h
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qbasictimer.h \
+		shortest_longest_1.h \
+		mymath.h \
+		minesweeper_2.h \
+		myother.h \
+		paperpassing_3.h \
+		shygame_4.h \
+		fib_5.h \
+		largestroot_6.h \
+		mytree.h \
+		treewalk_7.h \
+		factorial_8.h \
+		shortest_summation_9.h \
+		Add_10.h \
+		primedistance_11.h \
+		mario_12.h \
+		escape_13.h \
+		sub_14.h \
+		findperiodstring_15.h \
+		mystring.h \
+		largefactorial_16.h \
+		sumoflarge_17.h \
+		longestcommonsubstring_18.h \
+		getsolution_19.h \
+		longestpeekpalindrome_20.h \
+		maze_21.h \
+		easycity1_22.h \
+		mydatabase.h \
+		easycity2_25.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/building.o building.cpp
 
 release/closest_path.o: closest_path.cpp closest_path.h \
@@ -1059,6 +1102,81 @@ release/data.o: data.cpp data.h \
 		C:/Qt/5.13.1/mingw73_64/include/QtCore/QElapsedTimer \
 		C:/Qt/5.13.1/mingw73_64/include/QtCore/qelapsedtimer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/data.o data.cpp
+
+release/easycity1_22.o: easycity1_22.cpp easycity1_22.h \
+		mydatabase.h \
+		problemset.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/QDebug \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qdebug.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qalgorithms.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qglobal.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qconfig.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qtcore-config.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qsysinfo.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qlogging.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qflags.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qatomic.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qatomic_msvc.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qmutex.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qnumeric.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qversiontagging.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qhash.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qchar.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qiterator.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qlist.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qrefcount.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qarraydata.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qstring.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qbytearray.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qnamespace.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qstringliteral.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qstringview.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qpair.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qvector.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qpoint.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qstringlist.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qregexp.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qstringmatcher.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qmap.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qtextstream.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qiodevice.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qobject.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qcoreevent.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qmetatype.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qobject_impl.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qlocale.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qvariant.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qshareddata.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qset.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtSql/QSqlDatabase \
+		C:/Qt/5.13.1/mingw73_64/include/QtSql/qsqldatabase.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtSql/qtsqlglobal.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtSql/qtsql-config.h \
+		C:/Qt/5.13.1/mingw73_64/include/QtSql/QSqlQuery \
+		C:/Qt/5.13.1/mingw73_64/include/QtSql/qsqlquery.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/easycity1_22.o easycity1_22.cpp
 
 release/easycity2_25.o: easycity2_25.cpp easycity2_25.h \
 		mydatabase.h \
@@ -2090,27 +2208,40 @@ release/main.o: main.cpp mainwindow.h \
 		C:/Qt/5.13.1/mingw73_64/include/QtWidgets/QCheckBox \
 		C:/Qt/5.13.1/mingw73_64/include/QtWidgets/qcheckbox.h \
 		C:/Qt/5.13.1/mingw73_64/include/QtWidgets/qabstractbutton.h \
-		shortest_longest_1.h \
-		mymath.h \
 		problemset.h \
-		Add_10.h \
-		prime.h \
-		closest_path.h \
 		floor.h \
-		longest_path.h \
-		minesweeper_2.h \
-		myother.h \
-		paperpassing_3.h \
-		fib_5.h \
-		largestroot_6.h \
-		mytree.h \
-		factorial_8.h \
-		treewalk_7.h \
-		escape_13.h \
 		scheduler.h \
 		C:/Qt/5.13.1/mingw73_64/include/QtCore/QTimer \
 		C:/Qt/5.13.1/mingw73_64/include/QtCore/qtimer.h \
 		C:/Qt/5.13.1/mingw73_64/include/QtCore/qbasictimer.h \
+		shortest_longest_1.h \
+		mymath.h \
+		minesweeper_2.h \
+		myother.h \
+		paperpassing_3.h \
+		shygame_4.h \
+		fib_5.h \
+		largestroot_6.h \
+		mytree.h \
+		treewalk_7.h \
+		factorial_8.h \
+		shortest_summation_9.h \
+		Add_10.h \
+		primedistance_11.h \
+		mario_12.h \
+		escape_13.h \
+		sub_14.h \
+		findperiodstring_15.h \
+		mystring.h \
+		largefactorial_16.h \
+		sumoflarge_17.h \
+		longestcommonsubstring_18.h \
+		getsolution_19.h \
+		longestpeekpalindrome_20.h \
+		maze_21.h \
+		easycity1_22.h \
+		mydatabase.h \
+		easycity2_25.h \
 		C:/Qt/5.13.1/mingw73_64/include/QtWidgets/QApplication \
 		C:/Qt/5.13.1/mingw73_64/include/QtWidgets/qapplication.h \
 		C:/Qt/5.13.1/mingw73_64/include/QtCore/qcoreapplication.h \
@@ -2258,27 +2389,40 @@ release/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.13.1/mingw73_64/include/QtWidgets/QCheckBox \
 		C:/Qt/5.13.1/mingw73_64/include/QtWidgets/qcheckbox.h \
 		C:/Qt/5.13.1/mingw73_64/include/QtWidgets/qabstractbutton.h \
-		shortest_longest_1.h \
-		mymath.h \
 		problemset.h \
-		Add_10.h \
-		prime.h \
-		closest_path.h \
 		floor.h \
-		longest_path.h \
-		minesweeper_2.h \
-		myother.h \
-		paperpassing_3.h \
-		fib_5.h \
-		largestroot_6.h \
-		mytree.h \
-		factorial_8.h \
-		treewalk_7.h \
-		escape_13.h \
 		scheduler.h \
 		C:/Qt/5.13.1/mingw73_64/include/QtCore/QTimer \
 		C:/Qt/5.13.1/mingw73_64/include/QtCore/qtimer.h \
 		C:/Qt/5.13.1/mingw73_64/include/QtCore/qbasictimer.h \
+		shortest_longest_1.h \
+		mymath.h \
+		minesweeper_2.h \
+		myother.h \
+		paperpassing_3.h \
+		shygame_4.h \
+		fib_5.h \
+		largestroot_6.h \
+		mytree.h \
+		treewalk_7.h \
+		factorial_8.h \
+		shortest_summation_9.h \
+		Add_10.h \
+		primedistance_11.h \
+		mario_12.h \
+		escape_13.h \
+		sub_14.h \
+		findperiodstring_15.h \
+		mystring.h \
+		largefactorial_16.h \
+		sumoflarge_17.h \
+		longestcommonsubstring_18.h \
+		getsolution_19.h \
+		longestpeekpalindrome_20.h \
+		maze_21.h \
+		easycity1_22.h \
+		mydatabase.h \
+		easycity2_25.h \
 		ui_mainwindow.h \
 		C:/Qt/5.13.1/mingw73_64/include/QtCore/QVariant \
 		C:/Qt/5.13.1/mingw73_64/include/QtWidgets/QApplication \

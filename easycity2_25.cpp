@@ -37,22 +37,23 @@ QString EasyCity2::chsGenerate(string s)
 
 string EasyCity2::solve(string s)
 {
+    qDebug()<<"easycity2";
 
-    QSqlDatabase database;
-    database = QSqlDatabase::addDatabase("QMYSQL");
-    database.setHostName("localhost");
-    //database.setDatabaseName("Course6");
-    database.setUserName("root");
-    database.setPassword("12345678");
-    database.setPort(3306);
-    bool ok = database.open();
-    if(ok){
-        qDebug() << "Succeessful Connection.";
+//    QSqlDatabase database;
+//    database = QSqlDatabase::addDatabase("QMYSQL");
+//    database.setHostName("localhost");
+//    //database.setDatabaseName("Course6");
+//    database.setUserName("root");
+//    database.setPassword("12345678");
+//    database.setPort(3306);
+//    bool ok = database.open();
+//    if(ok){
+//        qDebug() << "Succeessful Connection.";
 
-    }
-    else{
-        qDebug() << "Error88787: Cannot connect!!!";
-    }
+//    }
+//    else{
+//        qDebug() << "Error88787: Cannot connect!!!";
+//    }
 
     vector<string> s_in = stringToVectorString(s);
     vector<string> s_out;
@@ -74,6 +75,11 @@ string EasyCity2::solve(string s)
     ho = stod(s_in[7]);
     m = stoi(s_in[8]);
 
+    if(lar_or_small == "sma")
+        lar_or_small = "asc";
+    else {
+        lar_or_small = "desc";
+    }
     QSqlQuery query;
     query.exec("DROP SCHEMA IF EXISTS CITYDATABASE");
     query.exec("CREATE SCHEMA CITYDATABASE");
@@ -82,15 +88,21 @@ string EasyCity2::solve(string s)
     query.exec("CREATE TABLE CITYTABLE(id int, COUNTRY VARCHAR(50), CITY VARCHAR(60), LAT DOUBLE, LON DOUBLE)");
     query.exec("LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/city.csv' INTO TABLE CITYTABLE FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS");
     query.exec("SELECT * FROM CITYTABLE");
-    query.exec("select count(city) as c ,t7.subb from (Select city from citytable as t2 where country = (select country from (SELECT COUNTRY FROM CITYTABLE as t1 ORDER BY LENGTH(COUNTRY) desc) as t limit "+QString::number(n)+ ", 1)) as t6, (select SUBSTRING(COUNTRY, 1, 3) as subb from (SELECT COUNTRY FROM CITYTABLE as t3 ORDER BY LENGTH(COUNTRY) desc) as t4 limit 4, 1) as t7");
+
+    query.exec("SELECT SUBSTRING(COUNTRY, 1, 3) as subb, count(city) as num FROM CITYTABLE group by country order by num "+QString::fromStdString(lar_or_small)+" limit "+QString::number(n-1)+", 1");
+    qDebug() << "select count(city) as c ,t7.subb from (Select city from citytable as t2 where country = (select country from (SELECT COUNTRY FROM CITYTABLE as t1 ORDER BY LENGTH(COUNTRY) desc) as t limit "+QString::number(n)+ ", 1)) as t6, (select SUBSTRING(COUNTRY, 1, 3) as subb from (SELECT COUNTRY FROM CITYTABLE as t3 ORDER BY LENGTH(COUNTRY) desc) as t4 limit 4, 1) as t7";
     while(query.next())
     {
-    s_out.push_back(query.value(1).toString().toStdString());
     s_out.push_back(query.value(0).toString().toStdString());
-    //qDebug()<<"sn:"<<query.value(1).toString()<<"nc:"<<query.value(0).toString();
+    s_out.push_back(query.value(1).toString().toStdString());
+    //qDebug()<<"sn:"<<query.value(0).toString()<<"nc:"<<query.value(1).toString();
     }
     query.exec("delete from citytable where ("+cheGenerate(che)+ " or (" +chsGenerate(chs)+")) or "+"(lat between " + QString::number(la) +" and " + QString::number(ha) +" and lon between " +QString::number(lo) + " and "+QString::number(ho) +")");
-    //qDebug() << "delete from citytable where ("+cheGenerate(che)+ " or (" +chsGenerate(chs)+")) or "+"(lat between " + QString::number(la) +" and " + QString::number(ha) +" and lon between " +QString::number(lo) + " and "+QString::number(ho) +")";
+    qDebug() << "delete from citytable where ("+cheGenerate(che)+ " or (" +chsGenerate(chs)+")) or "+"(lat between " + QString::number(la) +" and " + QString::number(ha) +" and lon between " +QString::number(lo) + " and "+QString::number(ho) +")";
+
+//    qDebug() << QString::fromStdString(s_out[0]);
+//    qDebug() << QString::fromStdString(s_out[1]);
+
 
 //    while(query.next())
 //    {
@@ -100,15 +112,24 @@ string EasyCity2::solve(string s)
 //    }
 
     query.exec("UPDATE citytable SET lat=(@temp:=lat), lat = lon, lon = @temp where id like '%" + QString::number(m) +"'");
-    //qDebug() << "UPDATE citytable SET lat=(@temp:=lat), lat = lon, lon = @temp where id like '%" + QString::number(m) +"'";
+    qDebug() << "query1:" << "UPDATE citytable SET lat=(@temp:=lat), lat = lon, lon = @temp where id like '%" + QString::number(m) +"'";
 
     query.exec("select round(c.ans, 4) from (select sqrt(x_dif + y_dif) as ans from (select pow(x1-x2, 2) as x_dif, pow(y1-y2, 2) as y_dif from(select min(LAT) as x1 ,max(LAT) as x2, max(LON) as y1, min(LON) as y2 from citytable )as minmax)as square) as c");
-    //qDebug() << "select round(c.ans, 4) from (select sqrt(x_dif + y_dif) as ans from (select pow(x1-x2, 2) as x_dif, pow(y1-y2, 2) as y_dif from(select min(LAT) as x1 ,max(LAT) as x2, max(LON) as y1, min(LON) as y2 from citytable )as minmax)as square) as c";
+    qDebug() << "query2:" << "select round(c.ans, 4) from (select sqrt(x_dif + y_dif) as ans from (select pow(x1-x2, 2) as x_dif, pow(y1-y2, 2) as y_dif from(select min(LAT) as x1 ,max(LAT) as x2, max(LON) as y1, min(LON) as y2 from citytable )as minmax)as square) as c";
     while(query.next())
     {
         s_out.push_back(query.value(0).toString().toStdString());
         //qDebug() << query.value(0).toString();
     }
-    string result = vectorStringToString(s_out);
+
+    for(int i = 0; i < s_out.size(); i++)
+    {
+        //qDebug() << QString::fromStdString(s_out[i]);
+    }
+
+
+    string result = vectorStringToStringForSQL(s_out);
+    qDebug() << "answer:" << QString::fromStdString(result);
     return result;
+
 }

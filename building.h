@@ -32,6 +32,7 @@
 #include "getsolution_19.h"
 #include "longestpeekpalindrome_20.h"
 #include "maze_21.h"
+#include "easycity1_22.h"
 #include "easycity2_25.h"
 
 using namespace std;
@@ -46,6 +47,7 @@ class Building:public QObject
         Data getData(){return data;}
         People p1;
         Scheduler schedule;
+        //int building_floor_return(){return data.distance};
     private:
         JudgeWindow judge;
         Data data;

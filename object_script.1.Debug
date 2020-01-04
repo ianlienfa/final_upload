@@ -2,6 +2,7 @@ debug/Add_10.o
 debug/building.o
 debug/closest_path.o
 debug/data.o
+debug/easycity1_22.o
 debug/easycity2_25.o
 debug/escape_13.o
 debug/factorial_8.o
