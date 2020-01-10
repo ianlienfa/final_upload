@@ -6,6 +6,8 @@ factorial::factorial()
 }
 string factorial::solve(string s)
 {
+    qDebug() << "factorial, string:" << QString::fromStdString(s);
+
     int index = 0 , count = 2,  prime_factor_sum = 0;
     vector<int> vec = stringtoVectorInt(s);
     int input_array[vec.size()],input_recover_array[vec.size()];

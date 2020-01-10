@@ -3,6 +3,7 @@
 #define MYSTRING_H
 #include "problemset.h"
 #include <vector>
+#include <QDebug>
 
 class MyString : public ProblemSet
 {

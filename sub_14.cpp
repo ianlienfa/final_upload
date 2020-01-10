@@ -6,6 +6,8 @@ Sub_14::Sub_14()
 }
 string Sub_14::solve(string s)
 {
+    qDebug() << "sub, string:" << QString::fromStdString(s);
+
     vector<int> vec = stringtoVectorInt(s);
     for(int i=0;i<vec.size();i++)
     {

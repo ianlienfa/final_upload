@@ -6,6 +6,7 @@ closest_path::closest_path()
 }
 string closest_path::solve(string s)
 {
+    qDebug() << "closest_path, string:" << QString::fromStdString(s);
     vector<double> vec = stringtoVectordouble(s);
     vector<double> result,min_vec;
 

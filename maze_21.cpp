@@ -221,6 +221,8 @@ public:
 
 string Maze::solve(string s)
 {
+    qDebug() << "Maze, string:" << QString::fromStdString(s);
+
     int m, n;
     int **mtrxptr;
     int startx, starty, endx, endy;

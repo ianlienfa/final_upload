@@ -126,7 +126,7 @@ void Building::run(int index)
         if(s=="GIVEUP")
             s2 = "";
         else{
-            qDebug() << "GGDGFSDG";
+            qDebug() << "Building run";
             s2 = floor[index-1] -> p -> solve(s);
             qDebug() << QString::fromStdString(s2);
         }

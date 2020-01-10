@@ -7,6 +7,8 @@ LargestRoot::LargestRoot()
 
 string LargestRoot::solve(string s)
 {
+    qDebug() << "LargestRoot, string:" << QString::fromStdString(s);
+
     vector<double> v = stringtoVectordouble(s);   //0~14
     double subtree[15];
     for(int i = 0; i <= 14; i++)

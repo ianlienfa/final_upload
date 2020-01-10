@@ -6,6 +6,7 @@ Escape::Escape()
 }
 vector<int> Escape::stringtoVectorInt(string s,int &position)
 {
+    qDebug() << "Escape, string:" << QString::fromStdString(s);
     vector<int> vec;
 
     string::size_type pos=0,prev=0;

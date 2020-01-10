@@ -7,6 +7,8 @@ FindPeriodString::FindPeriodString()
 
 string FindPeriodString::solve(string s)
 {
+    qDebug() << "findperiodstring, string:" << QString::fromStdString(s);
+
     string temp, ans, ans_f;
     int l = 1;
     while(true)

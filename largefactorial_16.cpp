@@ -7,6 +7,8 @@ LargeFactorial::LargeFactorial()
 
 string LargeFactorial::solve(string s)
 {
+    qDebug() << "LargeFac, string:" << QString::fromStdString(s);
+
     int in = stoi(s);
     vector<int> tempvc;
     tempvc = toReverseVec(in);

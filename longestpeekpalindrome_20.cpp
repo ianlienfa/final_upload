@@ -11,6 +11,8 @@ string LongestPalindrome::solve(string s)
 }
 inline string LongestPalindrome::puncRmv(string s)
 {
+    qDebug() << "LongestPali, string:" << QString::fromStdString(s);
+
     string ans;
     std::size_t find = 0, front = 0;
     do

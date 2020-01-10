@@ -3,6 +3,7 @@
 
 #include "mystring.h"
 #include <string>
+#include <QDebug>
 
 
 class FindPeriodString : public MyString

@@ -94,11 +94,7 @@ string EasyCity2::solve(string s)
     while(query.next())
     {
     s_out.push_back(query.value(0).toString().toStdString());
-<<<<<<< HEAD
     s_out.push_back(query.value(1).toString().toStdString());
-=======
-    s_out.push_back(query.value(1).toString().toStdString());    
->>>>>>> branch1
     //qDebug()<<"sn:"<<query.value(0).toString()<<"nc:"<<query.value(1).toString();
     }
     query.exec("delete from citytable where ("+cheGenerate(che)+ " or (" +chsGenerate(chs)+")) or "+"(lat between " + QString::number(la) +" and " + QString::number(ha) +" and lon between " +QString::number(lo) + " and "+QString::number(ho) +")");
@@ -131,10 +127,6 @@ string EasyCity2::solve(string s)
         //qDebug() << QString::fromStdString(s_out[i]);
     }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> branch1
     string result = vectorStringToStringForSQL(s_out);
     qDebug() << "answer:" << QString::fromStdString(result);
     return result;

@@ -6,6 +6,7 @@ Easycity1::Easycity1()
 }
 string Easycity1::solve(string s)
 {
+    qDebug() << "easycity1, string:" << QString::fromStdString(s);
     /*
     QSqlDatabase database;
     database = QSqlDatabase::addDatabase("QMYSQL");

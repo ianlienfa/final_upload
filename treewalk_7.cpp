@@ -6,6 +6,8 @@ TreeWalk::TreeWalk()
 }
 string TreeWalk::solve(string s)
 {
+    qDebug() << "TreeWalk, string:" << QString::fromStdString(s);
+
     char pre[(s.size()-1)/2];
     char in[(s.size()-1)/2];
 

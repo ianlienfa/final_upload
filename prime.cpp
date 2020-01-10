@@ -6,6 +6,8 @@ Prime::Prime()
 }
 string Prime::solve(string s) //For low calculation complexity,look-up table might be useful. 建立質數查找表。只要除以這些質數判斷即可
 {
+    qDebug() << "Prime, string:" << QString::fromStdString(s);
+
     vector<int> vec = stringtoVectorInt(s),vec_prime;
     int break_flag;
     for(int i=0;i<vec.size();i++)//對於每一個vec[i]

@@ -7,6 +7,8 @@ MarioCoin::MarioCoin()
 
 string MarioCoin::solve(string s)
 {
+    qDebug() << "Mario, string:" << QString::fromStdString(s);
+
     //string ss = "6 1 2 4 8 16 32 6 1 3 6 8 15 20";
     vector<int> in = stringtoVectorInt(s);
     string ans;

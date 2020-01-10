@@ -8,6 +8,7 @@ PaperPassing::PaperPassing()
 string PaperPassing::solve(string s)
 {
 
+    qDebug() << "Paperpassing, string:" << QString::fromStdString(s);
 
     //test branch2
     vector<int> read_in_num = stringtoVectorInt(s);
