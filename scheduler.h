@@ -6,6 +6,8 @@
 #include <algorithm>
 #include <iterator>
 #include <fstream>
+#include <map>
+#include <utility>
 #include "people.h"
 #include "data.h"
 typedef bool Behavior;  //1進電梯, 0出電梯
